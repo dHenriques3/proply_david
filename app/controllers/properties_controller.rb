@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to properties_path
     else
-      render :new, status: :unprocessable_entity, message: "Something went wrong!"
+      render :new, status: :unprocessable_entity, alert: 'Your property was not created. Try Again. '
     end
   end
 
