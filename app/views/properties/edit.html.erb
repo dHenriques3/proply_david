@@ -1,0 +1,13 @@
+<h1>Edit Your Properties🏡 </h1>
+
+<div>
+
+<%= simple_form_for(@property) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :type %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+</div>
