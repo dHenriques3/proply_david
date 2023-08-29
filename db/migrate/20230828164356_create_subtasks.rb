@@ -5,7 +5,7 @@ class CreateSubtasks < ActiveRecord::Migration[7.0]
       t.string :description
       t.date :start_date
       t.date :completion_date
-      t.boolean :completed
+      t.boolean :completed, default: false
       t.references :task, null: false, foreign_key: true
 
       t.timestamps
