@@ -35,4 +35,8 @@ class PropertiesControllerTest < ActionDispatch::IntegrationTest
     get properties_destroy_url
     assert_response :success
   end
+
+  # test "the truth" do
+  #   assert true
+  # end
 end
