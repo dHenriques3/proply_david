@@ -1,5 +1,4 @@
 class PropertiesController < ApplicationController
-
   def index
     @properties = Property.all
   end
@@ -7,7 +6,6 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
   end
-
 
   def new
     @property = Property.new
@@ -21,6 +19,25 @@ class PropertiesController < ApplicationController
     else
       render :new, status: :unprocessable_entity, alert: 'Your property was not created. Try Again. '
     end
+  end
+  
+  def edit
+    @property = Property.find(params[:id])
+  end
+  
+  def update
+    @property = Property.find(params[:id])
+    if @property.update(property_params)
+      redirect_to property_path(@property), notice: "Property was successfully updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+      @property = Property.find(params[:id])
+      @property.destroy
+      redirect_to properties_path, notice: "Property was successfuly deleted!"
   end
 
   private

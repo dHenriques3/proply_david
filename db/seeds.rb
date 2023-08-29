@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
 puts "Creating users..."
 
 nii = User.create(first_name: "nii", last_name: "addo", email: "nii@gmail.com", password: "1234567")
@@ -20,3 +21,4 @@ Property.create(name: "Womble", property_type: "house", description: "7 bedroom 
 Property.create(name: "Friends", property_type: "house", description: "3 bedroom house", address: "52 St Thomas's Rd, Finsbury Park, London", user: nii)
 
 puts "Finished!"
+
