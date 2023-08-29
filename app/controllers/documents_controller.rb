@@ -1,11 +1,32 @@
 class DocumentsController < ApplicationController
   def create
+    @property = Property.find(params[:property_id])
     @document = Document.new(document_params)
-    @document.user = current_user
+    @document.property = @property # connects a document to a property
     if @document.save
-      redirect_to documents_path
+      redirect_to property_path(@property) # redirecting to property show page.
     else
-      render :new, status: :unprocessable_entity, alert: 'Your document was not created. Try Again. '
+      render 'properties/show', notice: 'Your document was not created. Try Again. '
+    end
+  end
+
+  def update
+    @document = Document.find(params[:id])
+    @property = @document.property
+    if @document.update(document_params)
+      redirect_to property_path(@property), notice: "Your document was updated successfully."
+    else
+      redirect_to property_path(@property), notice: "Your document failed to update."
+    end
+  end
+
+  def destroy
+    @document = Document.find(params[:id])
+    @property = @document.property
+    if @document.destroy
+      redirect_to property_path(@property), notice: "Document successfully removed!"
+    else
+      redirect_to property_path(@property), notice: "Failed to remove document!"
     end
   end
 
