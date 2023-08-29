@@ -6,7 +6,10 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    # for creating a new task
     @task = Task.new
+    # for creating a new document
+    @document = Document.new
   end
 
   def create

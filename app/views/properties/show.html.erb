@@ -10,3 +10,6 @@
 
 <%# renders the partial to view the tasks. %>
 <%= render 'tasks/task', tasks: @property.tasks, property: @property %>
+
+<%# render the partial to add a document %>
+<%= render 'documents/documentform', property: @property, document: @document %>
