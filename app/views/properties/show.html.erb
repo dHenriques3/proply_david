@@ -7,4 +7,6 @@
 <%# render the partial to add a task %>
 <%= render 'tasks/taskform', property: @property, task: @task %>
 
-<%# TODO: render the partial to view the tasks. %>
+
+<%# renders the partial to view the tasks. %>
+<%= render 'tasks/task', tasks: @property.tasks, property: @property %>
