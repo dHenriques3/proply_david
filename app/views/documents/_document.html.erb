@@ -1,0 +1,8 @@
+<h1>My Documents</h1>
+<% documents.each do |document| %>
+  <strong>
+    <%=document.title%>
+    <%# Edit the document details %>
+    <%= render 'documents/documentform', property: document.property, document: document %>
+  </strong>
+<% end %>

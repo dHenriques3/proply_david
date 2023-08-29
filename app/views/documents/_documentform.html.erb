@@ -3,7 +3,7 @@
 <h2>Add a document.</h2>
 <%= simple_form_for [property, document] do |f| %>
   <%= f.input :title %>
-  <%= f.input :document_type %>
+  <%= f.input :document_type, collection: ["EPC","Floor Plan","Council Tax", "Title", "Tenancy Agreement", "Other"] %>
   <%= f.input :certification_date %>
   <%= f.submit %>
 <% end %>
