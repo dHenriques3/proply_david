@@ -1,3 +1,7 @@
 <h2><%= @property.name %></h2>
 <p><%= @property.property_type %></p>
 <p><%= @property.description %></p>
+
+
+<h3>Add a Task</h3>
+<%= render 'taskform', property: @property, task: @task %>
