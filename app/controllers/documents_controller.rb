@@ -20,11 +20,14 @@ class DocumentsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @document = Document.find(params[:id])
     @property = @document.property
-    @document.destroy
-    redirect_to property_path(@property), notice: "Document successfully removed!"
+    if @document.destroy
+      redirect_to property_path(@property), notice: "Document successfully removed!"
+    else
+      redirect_to property_path(@property), notice: "Failed to remove document!"
+    end
   end
 
   private
