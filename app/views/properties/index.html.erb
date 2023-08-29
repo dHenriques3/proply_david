@@ -1,13 +1,30 @@
 <h1>Properties#index</h1>
 <p>Find me in app/views/properties/index.html.erb</p>
+<%# This is the list of all the properties that user owns. %>
 
+<h1>Add a property</h1>
+<%# rendering the form to create a property %>
+<%= render 'propertyform', property: @property  %>
+
+<%# TODO: Refactor code to render cards showing all properties. %>
 <div id="properties">
   <ul>
     <% @properties.each do |property| %>
-      <li><%= property.name %></li>
+      <li><h3><%= property.name %></h3></li>
       <p>
         <%= link_to "Show property", property %>
       </p>
+
+      <h2>Edit Your Property🏡 </h2>
+      <%# rendering the form partial to update a property %>
+      <%= render 'propertyform', property: property %>
+
+      <%= link_to "Delete Property",
+            property_path(property),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
+            class: "btn btn-danger"
+      %>
+
     <% end %>
   </ul>
 </div>
