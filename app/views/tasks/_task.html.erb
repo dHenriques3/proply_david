@@ -1,0 +1,6 @@
+<h2>My Tasks</h2>
+<% tasks.each do |task| %>
+  <strong>
+    <%=link_to task.title, property_task_path(property, task) %>
+  </strong>
+<% end %>

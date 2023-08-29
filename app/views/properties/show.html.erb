@@ -1,3 +1,12 @@
 <h2><%= @property.name %></h2>
 <p><%= @property.property_type %></p>
 <p><%= @property.description %></p>
+
+
+<h3>Add a Task</h3>
+<%# render the partial to add a task %>
+<%= render 'tasks/taskform', property: @property, task: @task %>
+
+
+<%# renders the partial to view the tasks. %>
+<%= render 'tasks/task', tasks: @property.tasks, property: @property %>
