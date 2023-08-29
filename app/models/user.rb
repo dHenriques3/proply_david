@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :properties
+
   # these are all the tenancies of landlord
   has_many :tenancies_as_landlord, through: :properties, source: :tenancies
   # these are the landlords tasks
@@ -24,4 +25,5 @@ class User < ApplicationRecord
   has_many :documents_as_tenant, through: :properties
   # these are all user's messages
   has_many :messages
+
 end
