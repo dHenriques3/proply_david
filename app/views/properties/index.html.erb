@@ -19,6 +19,12 @@
       <%# rendering the form partial to update a property %>
       <%= render 'propertyform', property: property %>
 
+      <%= link_to "Delete Property",
+            property_path(property),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
+            class: "btn btn-danger"
+      %>
+
     <% end %>
   </ul>
 </div>
