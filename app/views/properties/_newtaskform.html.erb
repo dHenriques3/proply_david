@@ -1,0 +1,7 @@
+<%= simple_form_for [property, task] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :completion_date, as: :date  %>
+  <%= f.button :submit, "Create Task" %>
+<% end %>

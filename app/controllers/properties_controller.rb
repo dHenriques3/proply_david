@@ -1,4 +1,9 @@
 class PropertiesController < ApplicationController
+  def show
+    @property = Property.find(params[:id])
+    @task = Task.new
+  end
+
   def new
     @property = Property.new
   end
