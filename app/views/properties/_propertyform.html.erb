@@ -9,5 +9,10 @@
    %>
   <%= f.input :address %>
   <%= f.input :description, label: "Notes" %>
+
+  <%= f.input :images, as: :file,
+  input_html: { multiple: true }
+  %>
+
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
