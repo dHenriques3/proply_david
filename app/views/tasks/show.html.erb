@@ -1,18 +1,24 @@
-<h3>Edit the Task</h3>
-<%= render "taskform", task: @task, property: @property %>
-<%= link_to "Delete Task",
-            task_path(@task),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
-            class: "btn btn-danger"
-%>
+<div class="d-none">
+  <h3>Edit the Task</h3>
+  <%= render "taskform", task: @task, property: @property %>
+  <%= link_to "Delete Task",
+              task_path(@task),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
+              class: "btn btn-danger"
+  %>
+</div>
 
-<h3>Add a subtask Task</h3>
-<%= render 'subtasks/subtaskform', task: @task, subtask: @subtask %>
+<div class="d-none">
+  <h3>Add a subtask Task</h3>
+  <%= render 'subtasks/subtaskform', task: @task, subtask: @subtask %>
+</div>
 
-<h3>My subtasks</h3>
+<h3>Subtasks</h3>
+<div class="d-none">
 <%= render 'subtasks/subtask', subtasks: @subtasks %>
+</div>
 
 <div>
-  <h3>Task Accordion</h3>
   <%= render 'taskaccordian', task: @task %>
 </div>
+<%# task accordian with details about the task and its subtasks. %>
