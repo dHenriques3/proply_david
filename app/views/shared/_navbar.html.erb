@@ -1,8 +1,20 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon  <%= 'd-none' if params[:action] == "home" %>">
-  <div class="container-fluid">
+  <div class="container">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "casa.png" %>
+     <i class="fa-solid fa-p fa-lg" style="color: #000000;"></i>
     <% end %>
+
+    <nav class="navbar">
+      <div class="container justify-content-center">
+        <span class="navbar-text">
+       <div class="center-propley d-inline-flex">
+         <div><i class="fa-solid fa-p fa-lg" style="color: #000000;"></i></div>
+         <div><strong>roply</strong></div>
+
+       </div>
+        </span>
+      </div>
+    </nav>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,15 +23,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "🏠", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "✉️", "#", class: "nav-link" %>
+
+
+
+            <div class=nav-btn >
+
+              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+              <i class="fa-solid fa-bars fa-lg" style="color: #000000;"></i></button>
+            </div>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
