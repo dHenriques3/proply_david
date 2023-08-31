@@ -1,7 +1,0 @@
-<h3>Edit the Task</h3>
-<%= render "taskform", task: @task, property: @property %>
-<%= link_to "Delete Task",
-            task_path(@task),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
-            class: "btn btn-danger"
-%>
