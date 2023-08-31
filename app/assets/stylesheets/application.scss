@@ -11,3 +11,9 @@
 @import "components/index";
 @import "pages/index";
 
+
+// links with text deco none
+a {
+  text-decoration: none;
+  color: black;
+}
