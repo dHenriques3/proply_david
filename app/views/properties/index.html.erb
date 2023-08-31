@@ -1,18 +1,19 @@
 <div class="container">
 
-  <div class="cards" id="properties">
+  <div class="cards p-3" id="properties">
     <% @properties.each do |property| %>
       <%= link_to property_path(property.id) do %>
-        <div class="card-product">
+        <div class="card-product mt-0">
           <img src="https://source.unsplash.com/random?house" />
-
             <div class="card-product-infos">
-            <div class="border border-2 rounded-2">
-            <h2><%= property.name %></h2>
-            </div>
-              <p><%= property.description %></p>
-              <p><%= property.address %></p>
-              <p><%# link_to "Show property", property %></p>
+              <div class="property-name" style="text-decoration: none">
+                <h2><%= property.name.titleize %></h2>
+              </div>
+              <div class="property-deatils">
+                <p><%= property.description %></p>
+                <p><%= property.address %></p>
+                <p><%# link_to "Show property", property %></p>
+              </div>
             </div>
         </div>
       <% end %>
