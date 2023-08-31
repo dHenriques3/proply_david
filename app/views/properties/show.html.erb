@@ -1,27 +1,44 @@
-<h2><%= @property.name %></h2>
-<p><%= @property.property_type %></p>
-<p><%= @property.description %></p>
 
-<%# logic for the images of the property %>
-<% if @property.images.attached? %>
-  <% @property.images.each do |image| %>
-  <%# cloudinary image tag %>
-    <%= cl_image_tag image.key, crop: :fill, width:100, height: 100 %>
-  <% end %>
-<% else %>
-  <h3>No images</h3>
-<% end %>
+  <div class="property-show-banner w-100">
+    <%= render 'tasks/imagecarousel' %>
+    <div class="property-banner-text">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.description %></p>
+    </div>
+  </div>
+
+  <%# this code below allows us to render the carousel to see our documents. %>
+  <div class="documents-block">
+
+    <h1>My Documents</h1>
+
+    <div class="row">
+      <div class="document-scrollable-carousel col-12 rowßflex-nowrap">
+        <%= render 'documents/document', documents: @property.documents %>
+        <%# TODO: Align Button element%>
+      </div>
+      <div class="document-add-button">
+        <button class= 'btn btn-primary'>
+          <h4 class="text-center"> + </h4>
+        </button>
+      </div>
+    </div>
 
 
-<h3>Add a Task</h3>
-<%# render the partial to add a task %>
-<%= render 'tasks/taskform', property: @property, task: @task %>
+  </div>
 
-<%# renders the partial to view the tasks. %>
-<%= render 'tasks/task', tasks: @property.tasks, property: @property %>
+  <%= render 'documents/documentform', property: @property, document: @document %>
+  <div class="tasks-container">
+    <h2>Tasks</h2>
 
-<%# render the partial to add a document %>
-<%= render 'documents/documentform', property: @property, document: @document %>
+  </div>
 
-<%# renders the partial to view the documents. %>
-<%= render 'documents/document', documents: @property.documents, property: @property %>
+
+
+  <%#= render "tasks/taskform", task: @task, property: @property %>
+<%#
+   <%= link_to "Delete Task",
+              task_path(@task),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
+              class: "btn btn-danger"
+  %>

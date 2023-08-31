@@ -1,0 +1,45 @@
+.property-show-banner {
+  display: flex;
+  gap: 50px;
+
+  .property-banner-text {
+    flex-grow: 2;
+    padding: 50px;
+    border: 1px solid grey;
+  }
+}
+
+.documentcarousel {
+  display:flex;
+  gap:50px;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .item {
+    border:2px solid blue;
+    font-size:15px
+  }
+}
+
+.tasks-container {
+  border: 1px solid orange;
+  padding: 20px;
+
+  .task-row {
+    border: 1px solid grey;
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    span {
+      margin: 0 20px;
+    };
+
+    .complete-task-circle {
+      margin-left: auto;
+      width: 30px;
+      height: 30px;
+      border: 1px solid blue;
+      border-radius: 50%;
+    }
+  }
+}

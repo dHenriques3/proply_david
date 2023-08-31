@@ -1,5 +1,20 @@
-<h1>My Documents</h1>
 <% documents.each do |document| %>
+
+    <% 4.times do %>
+        <%= link_to property_path(@property), class: 'p-0 col-2 m-2' do %>
+          <div class="card" style="height: 100%;">
+            <%= image_tag "https://source.unsplash.com/random/?cars", height: 100,
+                crop: :fill, style: "object-fit: cover; width: 100%;", class: "p-1"
+            %>
+            <div class="card-body">
+              <%=document.title%>
+              <%= document.document_type %>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+
+    <!---
   <strong>
     <%=document.title%>
   </strong>
@@ -15,6 +30,5 @@
             data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the document?"},
             class: "btn btn-danger"
     %>
-    <br>
-    <br>
+    --->
 <% end %>
