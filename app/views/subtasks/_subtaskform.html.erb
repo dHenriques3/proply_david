@@ -1,0 +1,8 @@
+<%# This is the task form that allows us to add a task. %>
+<%= simple_form_for [task, subtask] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :completion_date, as: :date  %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,10 @@
+<%# This is a fomr partial that will allow us to create a document %>
+<%# Make sure to specify the property and document instance variables when rendering %>
+<h2>Add a document.</h2>
+<%= simple_form_for [property, document] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :document_type, collection: ["EPC","Floor Plan","Council Tax", "Title", "Tenancy Agreement", "Other"] %>
+  <%= f.input :certification_date %>
+  <%= f.input :file, as: :file %>
+  <%= f.submit %>
+<% end %>

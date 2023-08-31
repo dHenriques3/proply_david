@@ -25,4 +25,7 @@ class User < ApplicationRecord
   has_many :documents_as_tenant, through: :properties
   # these are all user's messages
   has_many :messages
+
+  # profile pricture
+  has_one_attached :profile_picture
 end

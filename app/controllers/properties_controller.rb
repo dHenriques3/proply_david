@@ -1,15 +1,15 @@
 class PropertiesController < ApplicationController
   def index
     @properties = Property.all
+    @property = Property.new
   end
 
   def show
     @property = Property.find(params[:id])
+    # for creating a new task
     @task = Task.new
-  end
-
-  def new
-    @property = Property.new
+    # for creating a new document
+    @document = Document.new
   end
 
   def create
@@ -21,29 +21,29 @@ class PropertiesController < ApplicationController
       render :new, status: :unprocessable_entity, alert: 'Your property was not created. Try Again. '
     end
   end
-  
+
   def edit
     @property = Property.find(params[:id])
   end
-  
+
   def update
     @property = Property.find(params[:id])
     if @property.update(property_params)
-      redirect_to property_path(@property), notice: "Property was successfully updated"
+      redirect_to properties_path, notice: "Property was successfully updated"
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-      @property = Property.find(params[:id])
-      @property.destroy
-      redirect_to properties_path, notice: "Property was successfuly deleted!"
+    @property = Property.find(params[:id])
+    @property.destroy
+    redirect_to properties_path, notice: "Property was successfully deleted!"
   end
 
   private
 
   def property_params
-    params.require(:property).permit(:name, :property_type, :address, :description)
+    params.require(:property).permit(:name, :property_type, :address, :description, images: [])
   end
 end

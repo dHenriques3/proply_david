@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+
+//body {
+  //background-color: #235789;
+//}
+
+#landing-background {
+  background-image: image-url('doors.png');
+  background-size: cover;
+  background-position: center;
+  height: calc(110vh - 60px);
+  width: -75px;
+  // height: 110vh;
+  // width: 100vh;
+  position: relative;
+  // z-index: -1;
+
+  h1 {
+    justify-content: center;
+    text-align: center;
+    font-size:160px;
+    color:black;
+    font-weight: 40px;
+
+  }
+
+  p {
+    color: black;
+    justify-content: center;
+    text-align: center;
+    margin-top:20px;
+    font-size: 20px;
+  }
+
+}
+
+.home {
+  width: 210px;
+  margin: 0 auto;
+  background: #ed7f08;
+  padding: 8px 18px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  &:hover {
+    background: #ce700a;
+  }
+}

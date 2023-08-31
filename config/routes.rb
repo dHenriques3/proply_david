@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   # These routes are the basic routes needed for the application to work.
   # They work with the documents, tasks, subtasks, and properties controllers.
   resources :properties do
-    resources :documents, only: %i[create]
+    resources :documents, only: %i[create update]
     resources :tasks, only: %i[create show]
   end
-  resources :documents, only: %i[update destroy]
+  resources :documents, only: %i[destroy]
   resources :tasks, only: %i[update destroy] do
-    resources :subtasks, only: :create
+    resources :subtasks, only: %i[create update]
   end
-  resources :subtasks, only: %i[update destroy]
+  resources :subtasks, only: %i[destroy]
 end

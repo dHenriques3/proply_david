@@ -1,0 +1,18 @@
+<%# This is the partial that will be rendered when we create the modal %>
+<%# that will allow us to add a property %>
+
+<%= simple_form_for(property) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :property_type,
+      collection: [ "Apartment", "Detached", "Semi-detached", "Terraced", "Land", "Other"],
+      label: "Type"
+   %>
+  <%= f.input :address %>
+  <%= f.input :description, label: "Notes" %>
+
+  <%= f.input :images, as: :file,
+  input_html: { multiple: true }
+  %>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
