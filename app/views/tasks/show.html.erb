@@ -5,3 +5,9 @@
             data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
             class: "btn btn-danger"
 %>
+
+<h3>Add a subtask Task</h3>
+<%= render 'subtasks/subtaskform', task: @task, subtask: @subtask %>
+
+<h3>My subtasks</h3>
+<%= render 'subtasks/subtask', subtasks: @subtasks %>
