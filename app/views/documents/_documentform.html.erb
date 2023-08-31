@@ -5,5 +5,6 @@
   <%= f.input :title %>
   <%= f.input :document_type, collection: ["EPC","Floor Plan","Council Tax", "Title", "Tenancy Agreement", "Other"] %>
   <%= f.input :certification_date %>
+  <%= f.input :file, as: :file %>
   <%= f.submit %>
 <% end %>
