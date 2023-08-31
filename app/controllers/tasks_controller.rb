@@ -16,6 +16,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     # TODO: Make sure that the task show page also show us the subtasks.
     @subtasks = @task.subtasks
+    # empty subtask instance for creating a subtask.
+    @subtask = Subtask.new
   end
 
   def update

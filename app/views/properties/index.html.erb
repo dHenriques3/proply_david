@@ -1,40 +1,64 @@
-<%# This is the list of all the properties that user owns. %>
 
-<h1>Properties#index</h1>
-<p>Find me in app/views/properties/index.html.erb</p>
+<div class="container">
 
-<%# Profile Image Logic %>
-<% if current_user.profile_picture.attached? %>
-  <%# cloundinary image tag %>
-  <%= cl_image_tag current_user.profile_picture.key, width:200, height: 200, crop: :fill %>
-<% else %>
-  <%# TODO: replace the code below with a placeholder image saved as png in asset file. %>
-  <h5>No profile picture</h5>
-<% end %>
-
-<h1>Add a property</h1>
-<%# rendering the form to create a property %>
-<%= render 'propertyform', property: @property  %>
-
-<%# TODO: Refactor code to render cards showing all properties. %>
-<div id="properties">
-  <ul>
+  <div class="cards p-3" id="properties">
     <% @properties.each do |property| %>
-      <li><h3><%= property.name %></h3></li>
-      <p>
-        <%= link_to "Show property", property %>
-      </p>
-
-      <h2>Edit Your Property🏡 </h2>
-      <%# rendering the form partial to update a property %>
-      <%= render 'propertyform', property: property %>
-
-      <%= link_to "Delete Property",
-            property_path(property),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
-            class: "btn btn-danger"
-      %>
-
+      <%= link_to property_path(property.id) do %>
+        <div class="card-product mt-0">
+          <img src="https://source.unsplash.com/random?house" />
+            <div class="card-product-infos">
+              <div class="property-name" style="text-decoration: none">
+                <h2><%= property.name.titleize %></h2>
+              </div>
+              <div class="property-deatils">
+                <p><%= property.description %></p>
+                <p><%= property.address %></p>
+                <p><%# link_to "Show property", property %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
-</div>
+
+<!---
+  the test version
+  <%# This is the list of all the properties that user owns. %>
+
+  <h1>Properties#index</h1>
+  <p>Find me in app/views/properties/index.html.erb</p>
+
+  <%# Profile Image Logic %>
+  <% if current_user.profile_picture.attached? %>
+    <%# cloundinary image tag %>
+    <%= cl_image_tag current_user.profile_picture.key, width:200, height: 200, crop: :fill %>
+  <% else %>
+    <%# TODO: replace the code below with a placeholder image saved as png in asset file. %>
+    <h5>No profile picture</h5>
+  <% end %>
+
+  <h1>Add a property</h1>
+  <%# rendering the form to create a property %>
+  <%= render 'propertyform', property: @property  %>
+
+  <%# TODO: Refactor code to render cards showing all properties. %>
+  <div id="properties">
+    <ul>
+      <% @properties.each do |property| %>
+        <li><h3><%= property.name %></h3></li>
+        <p>
+          <%= link_to "Show property", property %>
+        </p>
+
+        <h2>Edit Your Property🏡 </h2>
+        <%# rendering the form partial to update a property %>
+        <%= render 'propertyform', property: property %>
+
+        <%= link_to "Delete Property",
+              property_path(property),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
+              class: "btn btn-danger"
+        %>
+      <% end %>
+    </div>
+
+  </div> --->

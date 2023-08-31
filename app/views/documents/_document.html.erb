@@ -13,7 +13,15 @@
           </div>
         <% end %>
     <% end %>
+
     <!---
+  <strong>
+    <%=document.title%>
+  </strong>
+    <%# logic to view the document url. %>
+    <% if document.file.attached? %>
+      <%= link_to "Click here to view #{document.title}", document.file.url %>
+    <% end %>
     <%# Edit the document details %>
     <%= render 'documents/documentform', property: document.property, document: document %>
     <%# delete button %>
