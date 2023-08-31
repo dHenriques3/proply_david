@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :documents, only: %i[destroy]
   resources :tasks, only: %i[update destroy] do
-    resources :subtasks, only: :create
+    resources :subtasks, only: %i[create update]
   end
-  resources :subtasks, only: %i[update destroy]
+  resources :subtasks, only: %i[destroy]
 end

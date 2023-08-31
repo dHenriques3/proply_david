@@ -1,0 +1,11 @@
+<% subtasks.each do |subtask| %>
+  <h4><%= subtask.title %></h4>
+  <h5>Edit <%= subtask.title %> </h5>
+  <%= render 'subtasks/subtaskform', task: subtask.task, subtask:subtask  %>
+  <%# delete button %>
+  <%= link_to "Delete Subtask",
+          subtask_path(subtask),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the subtask?"},
+          class: "btn btn-danger"
+  %>
+<% end %>
