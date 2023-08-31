@@ -1,0 +1,63 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+
+  <%# accordian item for the major task %>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+
+      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+        aria-controls="panelsStayOpen-collapseOne"
+      >
+        <%# Title of the subtask %>
+        <strong>TASK:<%= task.title %></strong>
+      </button>
+
+    </h2>
+
+    <div id="panelsStayOpen-collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="panelsStayOpen-headingOne"
+    >
+      <div class="accordion-body">
+        <%# Description of the subtask. %>
+        <strong><%= task.description %></strong>
+        <br>
+        <strong>Start: </strong><%= task.start_date %>
+        <br>
+        <strong>End: </strong><%= task.completion_date %>
+      </div>
+    </div>
+  </div><%# end of accordian for MAJOR TASK. %>
+
+
+  <% task.subtasks.each_with_index do |subtask, index| %>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-heading<%=index%>">
+
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapse<%=index%>" aria-expanded="true"
+          aria-controls="panelsStayOpen-collapse<%=index%>"
+        >
+          <%# Title of the subtask %>
+          <strong> SUBTASK <%=index + 1%>:</strong> <%= subtask.title %>
+        </button>
+
+      </h2>
+
+      <div id="panelsStayOpen-collapse<%=index%>"
+        class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-heading<%=index%>"
+      >
+        <div class="accordion-body">
+          <%# Description of the subtask. %>
+          <strong><%= subtask.description %></strong>
+          <br>
+          <strong>Start: </strong><%= subtask.start_date %>
+          <br>
+          <strong>End: </strong><%= subtask.completion_date %>
+        </div>
+      </div>
+    </div><%# repeating accordian subtask item. %>
+  <% end %>
+
+</div>
