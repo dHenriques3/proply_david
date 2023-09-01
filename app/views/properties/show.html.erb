@@ -1,15 +1,17 @@
-<div class="property-show-banner w-100 mt-5">
-  <%# rendering image carousel %>
-  <%= render 'imagecarousel', property: @property %>
-  <div class="property-banner-text">
-    <h1><%= @property.name %></h1>
-    <p><%= @property.description %></p>
-    <%# button to edit property details. %>
-    <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
-      Edit <%= @property.name  %>
-    </button>
+<div class="container justify-content-center">
+  <div class="property-show-banner w-70">
+    <%# rendering image carousel %>
+    <%= render 'imagecarousel', property: @property %>
+      <img src="https://source.unsplash.com/random?house" />
+    <div class="property-banner-text">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.description.capitalize %></p>
+      <%# button to edit property details. %>
+      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
+        Edit <%= @property.name  %>
+      </button>
+    </div>
   </div>
-
 </div>
 
 <%# this code below allows us to render the carousel to see our documents. %>
@@ -51,3 +53,5 @@
 <%= render 'modal' %><%# Property Form Modal %>
 <%= render 'documents/modal' %><%# ADD Document Form Modal %>
 <%= render 'tasks/modal' %><%# ADD Task Form Modal %>
+
+</div>
