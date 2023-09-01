@@ -1,0 +1,21 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <% if property.tasks.any? %>
+    <% property.tasks.each do |task| %>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            <%= task.title %>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <%= task.description %>
+            <%# render subtasks %>
+            <%= render 'subtask_accordion', task: task %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>

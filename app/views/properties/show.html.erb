@@ -1,40 +1,46 @@
 
   <div class="property-show-banner w-100">
-    <%= render 'tasks/imagecarousel' %>
+    <%# rendering image carousel %>
+    <%= render 'imagecarousel', property: @property %>
     <div class="property-banner-text">
       <h1><%= @property.name %></h1>
       <p><%= @property.description %></p>
+      <%# button to edit property details. %>
+      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
+        Edit <%= @property.name  %>
+      </button>
     </div>
+
   </div>
 
   <%# this code below allows us to render the carousel to see our documents. %>
   <div class="documents-block">
-
     <h1>My Documents</h1>
-
     <div class="row">
       <div class="document-scrollable-carousel col-12 row flex-nowrap">
         <%= render 'documents/document', documents: @property.documents %>
         <%# TODO: Align Button element%>
       </div>
       <div class="document-add-button">
-        <button class= 'btn btn-primary'>
-          <h4 class="text-center"> + </h4>
+        <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
+          <h4> + </h4>
         </button>
       </div>
     </div>
-
-
   </div>
 
-  <%= render 'documents/documentform', property: @property, document: @document %>
   <div class="tasks-container">
     <h2>Tasks</h2>
+      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#taskModal">
+        ADD TASK
+      </button>
 
+      <%= render 'task_subtask_accordion', property: @property %>
   </div>
 
 
 
+  <%#= render 'documents/documentform', property: @property, document: @document %>
   <%#= render "tasks/taskform", task: @task, property: @property %>
 <%#
    <%= link_to "Delete Task",
@@ -42,3 +48,8 @@
               data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
               class: "btn btn-danger"
   %>
+
+<%= render 'modal' %><%# Property Form Modal %>
+<%= render 'documents/modal' %><%# ADD Document Form Modal %>
+<%= render 'tasks/modal' %><%# ADD Task Form Modal %>
+<%#= render 'subtasks/modal', subtask: @subtask %><%# ADD SUBTask Form Modal %>
