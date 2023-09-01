@@ -11,7 +11,7 @@
           <div class="accordion-body">
             <%= task.description %>
             <%# render subtasks %>
-            <%= render 'subtask_accordion', task: task %>
+            <%= render 'subtask_accordion', task: task, property: property %>
           </div>
         </div>
       </div>

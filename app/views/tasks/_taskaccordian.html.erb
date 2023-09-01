@@ -35,8 +35,8 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-heading<%=index%>">
 
-        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapse<%=index%>" aria-expanded="true"
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapse<%=index%>" aria-expanded="false"
           aria-controls="panelsStayOpen-collapse<%=index%>"
         >
           <%# Title of the subtask %>
@@ -46,7 +46,7 @@
       </h2>
 
       <div id="panelsStayOpen-collapse<%=index%>"
-        class="accordion-collapse collapse show"
+        class="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-heading<%=index%>"
       >
         <div class="accordion-body">

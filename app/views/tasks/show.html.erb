@@ -8,17 +8,14 @@
   %>
 </div>
 
-<div class="d-none">
-  <h3>Add a subtask Task</h3>
-  <%= render 'subtasks/subtaskform', task: @task, subtask: @subtask %>
-</div>
 
-<h3>Subtasks</h3>
-<div class="d-none">
-<%= render 'subtasks/subtask', subtasks: @subtasks %>
-</div>
+<button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#subtaskModal">
+  ADD SUBTASK
+</button>
 
 <div>
   <%= render 'taskaccordian', task: @task %>
 </div>
 <%# task accordian with details about the task and its subtasks. %>
+
+<%= render 'subtasks/modal', task: @task, subtask: @subtask %><%# ADD SUBTask Form Modal %>
