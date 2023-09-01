@@ -1,15 +1,20 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
+
     <div class="carousel-item active">
-      <img src="https://source.unsplash.com/random/?Cryptocurrency&1" class="d-block w-5 h-5" alt="...">
+      <img src="https://source.unsplash.com/random/?house%20icon" class="d-block w-5 h-5" alt="...">
     </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/random/?Shoes" class="d-block w-5 h-5" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/random/?cars" class="d-block w-5 h-5" alt="...">
-    </div>
+
+    <% if property.images.attached? %>
+      <% property.images.each do |image| %>
+        <div class="carousel-item">
+          <%= cl_image_tag image.url, class:"d-block w-5 h-5"%>
+        </div>
+      <% end %>
+    <% end %>
+
   </div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
