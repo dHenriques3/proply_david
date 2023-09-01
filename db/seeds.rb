@@ -47,6 +47,27 @@ puts 'Creating 3 fake users...'
     property.images.attach(io: file5, filename: "adiddas.png", content_type: "image/png")
 
     property.save!
+
+    puts 'creating documents'
+    2.times do
+      doc = Document.new(
+        title: ["IMP!!!", "TAX 2020", "AGREEMENT"].sample,
+        document_type: ["EPC","Floor Plan","Council Tax", "Title", "Tenancy Agreement", "Other"].sample,
+        property: property
+      )
+      doc.save!
+    end
+    puts 'creating tasks!'
+    2.times do
+      task = Task.new(
+        start_date: Date.today+rand(10000),
+        completion_date: Date.today+rand(10000),
+        title: ["Renovation","Viewing", "Electrical Work", "Gas Work"].sample,
+        property: property,
+        task: task,
+        user: user
+      )
+    end
   end
 
   puts 'properties made'
