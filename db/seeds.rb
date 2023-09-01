@@ -9,7 +9,9 @@
 require 'faker'
 
 puts 'Creating 3 fake users...'
+
 2.times do
+
   puts 'creating user'
   user = User.new(
     first_name: Faker::Name.name,
@@ -18,9 +20,11 @@ puts 'Creating 3 fake users...'
     password: "password"
   )
   user.save!
+
   puts 'user created!'
 
   puts 'creating properties'
+
   2.times do
     property = Property.new(
       name: Faker::Travel::TrainStation.name(region: 'united_kingdom', type: 'metro'),
@@ -29,15 +33,27 @@ puts 'Creating 3 fake users...'
       address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
       user: user
     )
+
+    file = URI.open("https://source.unsplash.com/random?house")
+    file2 = URI.open("https://source.unsplash.com/random?livingroom")
+    file3 = URI.open("https://source.unsplash.com/random?garage")
+    file4 = URI.open("https://source.unsplash.com/random?foyer")
+    file5 = URI.open("https://source.unsplash.com/random?facade")
+
+    property.images.attach(io: file, filename: "adiddas.png", content_type: "image/png")
+    property.images.attach(io: file2, filename: "adiddas.png", content_type: "image/png")
+    property.images.attach(io: file3, filename: "adiddas.png", content_type: "image/png")
+    property.images.attach(io: file4, filename: "adiddas.png", content_type: "image/png")
+    property.images.attach(io: file5, filename: "adiddas.png", content_type: "image/png")
+
     property.save!
   end
+
   puts 'properties made'
 end
 puts 'Finished making properties and users!'
 
 # puts 'Creating 20 fake properties...'
-
-
 
 puts "Creating users..."
 
