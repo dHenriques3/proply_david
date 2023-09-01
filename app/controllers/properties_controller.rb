@@ -29,7 +29,7 @@ class PropertiesController < ApplicationController
   def update
     @property = Property.find(params[:id])
     if @property.update(property_params)
-      redirect_to properties_path, notice: "Property was successfully updated"
+      redirect_to property_path(@property), notice: "Property was successfully updated"
     else
       render :edit, status: :unprocessable_entity
     end

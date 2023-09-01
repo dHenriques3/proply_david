@@ -5,7 +5,12 @@
     <div class="property-banner-text">
       <h1><%= @property.name %></h1>
       <p><%= @property.description %></p>
+      <%# button to edit property details. %>
+      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
+        Edit <%= @property.name  %>
+      </button>
     </div>
+
   </div>
 
   <%# this code below allows us to render the carousel to see our documents. %>
@@ -39,5 +44,5 @@
               class: "btn btn-danger"
   %>
 
-<%= render 'modal' %>
-<%= render 'documents/modal' %>
+<%= render 'modal' %><%# Property Form Modal %>
+<%= render 'documents/modal' %><%# ADD Document Form Modal %>
