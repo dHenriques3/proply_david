@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
   <div class="property-show-banner w-70">
     <%# rendering image carousel %>
-    <%# <%= render 'imagecarousel', property: @property %>
+    <%= render 'imagecarousel', property: @property %>
       <img src="https://source.unsplash.com/random?house" />
     <div class="property-banner-text">
       <h1><%= @property.name %></h1>
@@ -11,38 +11,38 @@
         Edit <%= @property.name  %>
       </button>
     </div>
-
   </div>
+</div>
 
-  <%# this code below allows us to render the carousel to see our documents. %>
-  <div class="documents-block">
-    <h1>My Documents</h1>
-    <div class="row">
-      <div class="document-scrollable-carousel col-12 row flex-nowrap">
-        <%= render 'documents/document', documents: @property.documents %>
-        <%# TODO: Align Button element%>
-      </div>
-      <div class="document-add-button">
-        <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
-          <h4> + </h4>
-        </button>
-      </div>
+<%# this code below allows us to render the carousel to see our documents. %>
+<div class="documents-block mt-5 position-relative">
+  <h1>My Documents</h1>
+  <div class="row m-0">
+    <div class="document-scrollable-carousel col-12 row flex-nowrap">
+      <%= render 'documents/document', documents: @property.documents %>
+      <%# TODO: Align Button element%>
     </div>
-  </div>
-
-  <div class="tasks-container">
-    <h2>Tasks</h2>
-      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#taskModal">
-        ADD TASK
+    <%# <div class="document-add-button"> %>
+      <button class= 'document-add-button btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
+        <h4> + </h4>
       </button>
-
-      <%= render 'task_subtask_accordion', property: @property %>
+    <%# </div> %>
   </div>
+</div>
+
+<div class="tasks-container mt-5">
+  <h2>Tasks</h2>
+    <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#taskModal">
+      ADD TASK
+    </button>
+
+    <%= render 'task_subtask_accordion', property: @property %>
+</div>
 
 
 
-  <%#= render 'documents/documentform', property: @property, document: @document %>
-  <%#= render "tasks/taskform", task: @task, property: @property %>
+<%#= render 'documents/documentform', property: @property, document: @document %>
+<%#= render "tasks/taskform", task: @task, property: @property %>
 <%#
    <%= link_to "Delete Task",
               task_path(@task),
