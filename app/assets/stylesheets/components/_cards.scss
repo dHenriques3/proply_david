@@ -36,6 +36,11 @@
   padding: 16px;
 }
 
+.card-product:hover {
+  background: #ed7f08;
+  opacity: 2;
+  color: white;
+}
 
 .cards {
   display: grid;
