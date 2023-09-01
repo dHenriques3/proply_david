@@ -39,11 +39,10 @@ puts 'Finished making properties and users!'
 
 
 
-# puts "Creating users..."
+puts "Creating users..."
 
-# Nii = User.create(first_name: "nii", last_name: "addo", email: "nii@gmail.com", password: "1234567")
-# David = User.create(first_name: "david", last_name: "lowe", email: "david@gmail.com", password: "1234567")
-# Fabio = User.create(first_name: "fabio", last_name: "sampaio", email: fabio)
+Nii = User.create(first_name: "nii", last_name: "addo", email: "nii@gmail.com", password: "1234567")
+David = User.create(first_name: "david", last_name: "lowe", email: "david@gmail.com", password: "1234567")
 
 # puts "Creating users..."
 
