@@ -3,13 +3,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="subtaskModalLabel">Add Task</h1>
+        <h1 class="modal-title fs-5" id="subtaskModalLabel">ADD SUBTASK</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <%# renders the task form. %>
         <%# this form will be called in the property show page and the task show page. %>
-        <%= render 'subtasks/subtaskform', task: @task, property: @property %>
+        <%= render 'subtasks/subtaskform', task: @task, subtask: @subtask %>
       </div>
     </div>
   </div>
