@@ -12,6 +12,8 @@
             <%= task.description %>
             <%# render subtasks %>
             <%= render 'subtask_accordion', task: task, property: property %>
+            <%# this button shows all the details relating to a task %>
+            <%= link_to "Details", property_task_path(property, task), class: "btn btn-secondary" %>
           </div>
         </div>
       </div>

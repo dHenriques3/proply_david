@@ -1,4 +1,4 @@
-<div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="accordion p-3" id="accordionPanelsStayOpenExample">
 
   <% if task.subtasks.any? %>
     <% task.subtasks[0..2].each_with_index do |subtask, index| %>
@@ -21,5 +21,4 @@
 
   <%# this button calls down a modal to add a subtask. %>
   <%# <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#subtaskModal">ADD SUBTASK</button> %>
-  <%= link_to "View More", property_task_path(property, task), class: "btn btn-secondary" %>
 </div>
