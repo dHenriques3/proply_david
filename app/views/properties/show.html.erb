@@ -3,41 +3,50 @@
     <%# rendering image carousel %>
     <%= render 'imagecarousel', property: @property, class: "p-3"%>
     <div class="property-banner-text">
-      <h1><%= @property.name %></h1>
+      <h2><%= @property.name %></h2>
+      <h6>-------------------------</h6>
+      <h6><i class="fa-solid fa-house"></i><%= @property.property_type.upcase %></h6>
+      <h6><i class="fa-solid fa-location-dot"></i> <%= @property.address.upcase %></h6>
+      <h6>-------------------------</h6>
       <p><%= @property.description.capitalize %></p>
       <%# button to edit property details. %>
-      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
-        Edit <%= @property.name  %>
+      <button class= 'btn btn-secondary text-center' data-bs-toggle="modal" data-bs-target="#propertyModal">
+        <i class="fa-solid fa-pencil"></i>
       </button>
     </div>
   </div>
 </div>
 
-<%# this code below allows us to render the carousel to see our documents. %>
-<div class="documents-block mt-5 position-relative">
-  <h1>My Documents</h1>
-  <div class="row m-0">
-    <div class="document-scrollable-carousel col-12 row flex-nowrap">
-      <%= render 'documents/document', documents: @property.documents %>
-      <%# TODO: Align Button element%>
-    </div>
-    <%# <div class="document-add-button"> %>
-      <button class= 'document-add-button btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
-        <h4> + </h4>
-      </button>
-    <%# </div> %>
+<%# tab functionality added %>
+<div class="m-3" data-controller="tab">
+  <div class="row p-2">
+    <button class="btn btn-primary col-6 text-light" data-tab-target="taskButton" data-action="click->tab#showtask">Tasks</button>
+    <button class="btn btn-light col-6" data-tab-target="docButton" data-action="click->tab#showdoc">Documents</button>
   </div>
+  <%# this code below allows us to render the carousel to see our documents. %>
+  <div class="documents-block position-relative d-none" data-tab-target="documents">
+    <h1>My Documents</h1>
+    <div class="row m-0">
+      <div class="document-scrollable-carousel col-12 row flex-nowrap">
+        <%= render 'documents/document', documents: @property.documents %>
+        <%# Align Button element%>
+      </div>
+        <button class= 'document-add-button btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
+          <h4> + </h4>
+        </button>
+    </div>
+  </div>
+
+  <div class="tasks-container" data-tab-target="tasks">
+    <h2>Tasks</h2>
+      <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#taskModal">
+        ADD TASK
+      </button>
+
+      <%= render 'task_subtask_accordion', property: @property %>
+  </div>
+
 </div>
-
-<div class="tasks-container mt-5">
-  <h2>Tasks</h2>
-    <button class= 'btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#taskModal">
-      ADD TASK
-    </button>
-
-    <%= render 'task_subtask_accordion', property: @property %>
-</div>
-
 
 
 <%#= render 'documents/documentform', property: @property, document: @document %>
@@ -52,5 +61,3 @@
 <%= render 'modal' %><%# Property Form Modal %>
 <%= render 'documents/modal' %><%# ADD Document Form Modal %>
 <%= render 'tasks/modal' %><%# ADD Task Form Modal %>
-
-</div>
