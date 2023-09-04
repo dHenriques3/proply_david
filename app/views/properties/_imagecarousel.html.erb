@@ -3,16 +3,16 @@
 
     <div class="carousel-item active">
       <% if property.images.attached? %>
-        <%= cl_image_tag property.images.first.key, class:"d-block w-2 h-2", crop: :fill, style: "object-fit:cover"%>
+        <%= cl_image_tag property.images.first.key, class:"d-block", crop: :fill, style: "width:100%; height:100%; object-fit:cover"%>
       <% else %>
-        <h1>No Images Found. Please add images.</h1>
+        <h2 class="text-center"> ADD IMAGES </h2>
       <% end %>
     </div>
 
     <% if property.images.attached? %>
       <% property.images[1..property.images.size].each do |image| %>
         <div class="carousel-item">
-          <%= cl_image_tag image.key, class:"d-block w-2 h-2", crop: :fill, style: "object-fit:cover"%>
+          <%= cl_image_tag image.key, class:"d-block", crop: :fill, style: "width:100%;height:100%; object-fit:cover"%>
         </div>
       <% end %>
      <% end %>
