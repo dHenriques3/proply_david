@@ -30,6 +30,8 @@ gem "jbuilder"
 # faker gem to generate fake data
 gem "faker"
 
+# Geocder gem for the ability to have maps.
+gem 'geocoder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

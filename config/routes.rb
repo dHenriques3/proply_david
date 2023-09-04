@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   end
   resources :subtasks, only: %i[destroy]
 
-
+  resources :tasks, only: %i[index]
+  resources :documents, only: %i[index]
 end

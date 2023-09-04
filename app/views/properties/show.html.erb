@@ -1,26 +1,38 @@
+<div class="d-flex m-0">
 
-<div class="property-show-banner position-relative mt-5"
-  data-controller = "editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
-  <%# rendering image carousel %>
-  <%= render 'imagecarousel', property: @property, class: "p-3"%>
-  <div class="property-banner-text">
-    <h2><%= @property.name %></h2>
-    <h6>-------------------------</h6>
-    <h6><i class="fa-solid fa-house"></i><%= @property.property_type.upcase %></h6>
-    <h6><i class="fa-solid fa-location-dot"></i> <%= @property.address.upcase %></h6>
-    <h6>-------------------------</h6>
-    <p><%= @property.description.capitalize %></p>
-    <%# button to edit property details. %>
-    <button class= 'btn btn-secondary text-center btn-round position-absolute d-none'
-            data-bs-toggle="modal"
-            data-bs-target="#propertyModal"
-            data-editbutton-target = "editBtn"
-            style ="top:16px; right:16px;"
-
-    >
-      <i class="fa-solid fa-pencil"></i>
-    </button>
+  <div class=" col-8 property-show-banner position-relative mt-5"
+    data-controller = "editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
+    <%# rendering image carousel %>
+    <%= render 'imagecarousel', property: @property, class: "p-3"%>
+    <%# property details %>
+    <div class="property-banner-text">
+      <h2><%= @property.name %></h2>
+      <h6>-------------------------</h6>
+      <h6><i class="fa-solid fa-house"></i><%= @property.property_type.upcase %></h6>
+      <h6><i class="fa-solid fa-location-dot"></i> <%= @property.address.upcase %></h6>
+      <h6>-------------------------</h6>
+      <p><%= @property.description.capitalize %></p>
+      <%# button to edit property details. %>
+      <button class= 'btn btn-secondary text-center btn-round position-absolute d-none'
+              data-bs-toggle="modal"
+              data-bs-target="#propertyModal"
+              data-editbutton-target = "editBtn"
+              style ="top:16px; right:16px;"
+      >
+        <i class="fa-solid fa-pencil"></i>
+      </button>
+    </div>
   </div>
+
+  <%# map for a single property %>
+  <div
+    class = "col-4 mt-5 map"
+    style = "border-radius: 10px;"
+    data-controller="map"
+    data-map-marker-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
 
 

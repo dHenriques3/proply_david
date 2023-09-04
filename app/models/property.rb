@@ -11,4 +11,7 @@ class Property < ApplicationRecord
   has_many_attached :images
 
   validates_presence_of :name, :property_type, :address, :description
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

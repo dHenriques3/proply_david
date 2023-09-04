@@ -1,7 +1,15 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all.reverse
+    @properties = Property.where("user_id = ?", current_user.id)
     @property = Property.new
+    # populating markers
+    @markers = @properties.geocoded.map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude,
+        marker_html: render_to_string(partial: "marker", locals: { property: property })
+      }
+    end
   end
 
   def show
@@ -10,6 +18,12 @@ class PropertiesController < ApplicationController
     @task = Task.new
     # for creating a new document
     @document = Document.new
+
+    @marker = {
+      lat: @property.latitude,
+      lng: @property.longitude,
+      marker_html: render_to_string(partial: "marker", locals: { property: @property })
+    }
   end
 
   def create
