@@ -1,7 +1,15 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all.reverse
+    @properties = Property.all
     @property = Property.new
+    # populating markers
+    @markers = @properties.geocoded.map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude,
+        marker_html: render_to_string(partial: "marker", locals: { property: property })
+      }
+    end
   end
 
   def show

@@ -1,3 +1,10 @@
+<%# This code connects the div below to the map_controller %>
+<div style="width: 100%; height: 450px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  class = "m-2">
+</div>
 
   <div class="cards p-3" id="properties">
     <% @properties.each do |property| %>
