@@ -39,12 +39,14 @@
 <%# tab functionality added %>
 <div class="m-3" data-controller="tab">
   <div class="row mb-3">
-    <button class="btn btn-primary col-6 text-light" data-tab-target="taskButton" data-action="click->tab#showtask">Tasks</button>
-    <button class="btn btn-light col-6" data-tab-target="docButton" data-action="click->tab#showdoc">Documents</button>
+    <button class="btn btn-primary col-4 text-light" data-tab-target="taskButton" data-action="click->tab#showtask">Tasks</button>
+    <button class="btn btn-light col-4" data-tab-target="docButton" data-action="click->tab#showdoc">Documents</button>
+    <button class="btn btn-light col-4" data-tab-target="tenancyButton" data-action="click->tab#showtenancy">Tenancy</button>
   </div>
+
   <%# this code below allows us to render the carousel to see our documents. %>
   <div class="documents-block position-relative d-none" data-tab-target="documents">
-    <h1>My Documents</h1>
+    <h1>MY DOCUMENTS</h1>
     <div class="row m-0">
       <div class="document-scrollable-carousel col-12 row flex-nowrap">
         <%= render 'documents/document', documents: @property.documents %>
@@ -69,7 +71,20 @@
       <%= render 'task_subtask_accordion', property: @property %>
   </div>
 
+  <div class="tasks-container position-relative d-none" data-tab-target="tenancies">
+    <h2>TENANCY</h2>
+      <%# button to add tasks %>
+      <button class= 'btn btn-primary text-center btn-round position-absolute'
+              data-bs-toggle="modal" data-bs-target="#taskModal"
+              style="top:16px; right:32px;"
+      >
+        <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+      </button>
+
+      <%= render 'task_subtask_accordion', property: @property %>
+  </div>
 </div>
+
 
 
 <%#= render 'documents/documentform', property: @property, document: @document %>
