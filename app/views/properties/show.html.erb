@@ -72,16 +72,16 @@
   </div>
 
   <div class="tasks-container position-relative d-none" data-tab-target="tenancies">
-    <h2>TENANCY</h2>
+    <h2>TENANCY DETAILS</h2>
       <%# button to add tasks %>
       <button class= 'btn btn-primary text-center btn-round position-absolute'
-              data-bs-toggle="modal" data-bs-target="#taskModal"
+              data-bs-toggle="modal" data-bs-target="#tenancyModal"
               style="top:16px; right:32px;"
       >
         <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
       </button>
 
-      <%= render 'task_subtask_accordion', property: @property %>
+      <%= render 'tenancy_details', property: @property %>
   </div>
 </div>
 
@@ -99,3 +99,4 @@
 <%= render 'modal' %><%# Property Form Modal %>
 <%= render 'documents/modal' %><%# ADD Document Form Modal %>
 <%= render 'tasks/modal' %><%# ADD Task Form Modal %>
+<%= render 'tenancies/modal' %>

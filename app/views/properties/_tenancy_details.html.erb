@@ -1,0 +1,30 @@
+<!---
+  <%= property.tenancies.reverse.first.start_date %>
+  <%= property.tenancies.reverse.first.end_date %>
+  <%= property.tenancies.reverse.first.user.first_name %> <%= property.tenancies.reverse.first.user.last_name %>
+---->
+
+<table class="table table-striped table-hover"">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Tenant</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% property.tenancies.reverse.each_with_index do |tenancy, index| %>
+    <tr>
+      <th scope="row"><%= index + 1 %></th>
+      <td><%= tenancy.start_date %></td>
+      <td><%= tenancy.end_date %></td>
+      <td><%= tenancy.user.first_name %> <%= tenancy.user.last_name %></td>
+      <td><%= tenancy.user.email%></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>

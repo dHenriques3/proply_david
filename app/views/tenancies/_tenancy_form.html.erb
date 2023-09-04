@@ -1,0 +1,8 @@
+<%= simple_form_for [property, tenancy] do |f| %>
+  <div class="d-flex">
+    <%= f.input :start_date, label: "Start",  html5: true, input_html: {style: "width: 70px;"}%>
+    <%= f.input :end_date, label: "End",  html5: true, input_html: {style: "width: 70px;"} %>
+    <%= f.input :email %>
+  </div>
+  <%= f.button :submit %>
+<% end %>

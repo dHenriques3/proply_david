@@ -18,12 +18,14 @@ class PropertiesController < ApplicationController
     @task = Task.new
     # for creating a new document
     @document = Document.new
-
+    # marker for the map
     @marker = {
       lat: @property.latitude,
       lng: @property.longitude,
       marker_html: render_to_string(partial: "marker", locals: { property: @property })
     }
+    # tenancy details
+    @tenancy = Tenancy.new
   end
 
   def create

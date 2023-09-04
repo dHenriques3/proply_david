@@ -1,0 +1,16 @@
+<!-- TENANCY Modal -- ADD -->
+<div class="modal fade" id="tenancyModal" tabindex="-1" aria-labelledby="tenancyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="tenancyModalLabel">ADD TENANT</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%# renders the tenancy form. %>
+        <%# this form will be called in the property show page and the tenancy show page. %>
+        <%= render 'tenancies/tenancy_form', property: @property, tenancy: @tenancy %>
+      </div>
+    </div>
+  </div>
+</div>
