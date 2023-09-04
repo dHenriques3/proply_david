@@ -1,3 +1,4 @@
+
 // Property Show Page Document Carousel
 div.document-scrollable-carousel {
   background-color: #333;
@@ -24,9 +25,7 @@ div.document-scrollable-carousel {
   gap: 30px;
   overflow: hidden;
   height: 400px;
-  width: 100%;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   border-radius: 10px;
   margin: 0px;
@@ -36,7 +35,10 @@ div.document-scrollable-carousel {
     padding: 50px;
     // border: 1px solid grey;
   }
+}
 
+.property-show-banner:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 // Tasks Container On the property show page.

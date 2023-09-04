@@ -18,6 +18,12 @@ class PropertiesController < ApplicationController
     @task = Task.new
     # for creating a new document
     @document = Document.new
+
+    @marker = {
+      lat: @property.latitude,
+      lng: @property.longitude,
+      marker_html: render_to_string(partial: "marker", locals: { property: @property })
+    }
   end
 
   def create
