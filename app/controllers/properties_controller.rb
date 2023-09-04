@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all
+    @properties = Property.where("user_id = ?", current_user.id)
     @property = Property.new
     # populating markers
     @markers = @properties.geocoded.map do |property|
