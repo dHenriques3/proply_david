@@ -1,3 +1,4 @@
+// Property Show Page Document Carousel
 div.document-scrollable-carousel {
   background-color: #333;
   overflow-x: auto;
@@ -16,7 +17,11 @@ div.document-scrollable-carousel {
   border-radius: 50%;
 }
 
+
+// Property Show Page Card With property details
 .property-show-banner {
+  display: flex;
+  gap: 30px;
   overflow: hidden;
   height: 400px;
   width: 100%;
@@ -25,10 +30,36 @@ div.document-scrollable-carousel {
   align-items: center;
   border-radius: 10px;
   margin: 0px;
+
+  .property-banner-text {
+    flex-grow: 2;
+    padding: 50px;
+    // border: 1px solid grey;
+  }
+
 }
 
-.btn-round {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+// Tasks Container On the property show page.
+.tasks-container {
+  border: 1px solid orange;
+  padding: 20px;
+  background-color: #ffffff;
+
+  .task-row {
+    border: 1px solid grey;
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    span {
+      margin: 0 20px;
+    };
+
+    .complete-task-circle {
+      margin-left: auto;
+      width: 30px;
+      height: 30px;
+      border: 1px solid blue;
+      border-radius: 50%;
+    }
+  }
 }
