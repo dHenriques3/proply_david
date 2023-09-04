@@ -11,6 +11,7 @@ export default class extends Controller {
     console.log("showdocs")
     // revelaing the documents tab.
     this.tasksTarget.classList.add("d-none")
+    this.tenanciesTarget.classList.add("d-none")
     this.documentsTarget.classList.remove("d-none")
     // changing the task button color from primary to light
     this.taskButtonTarget.classList.remove("btn-primary")
@@ -31,6 +32,7 @@ export default class extends Controller {
     console.log("showtasks")
     // revelaing the tasks tab.
     this.documentsTarget.classList.add("d-none")
+    this.tenanciesTarget.classList.add("d-none")
     this.tasksTarget.classList.remove("d-none")
     // changing the document button color from primary to light
     this.docButtonTarget.classList.remove("btn-primary")
@@ -44,6 +46,7 @@ export default class extends Controller {
     // changing the task button text color
     this.taskButtonTarget.classList.add("text-light")
     this.docButtonTarget.classList.remove("text-light")
+    this.tenancyButtonTarget.classList.remove("text-light")
 
   }
 
