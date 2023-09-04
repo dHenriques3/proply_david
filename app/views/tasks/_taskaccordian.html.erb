@@ -3,11 +3,11 @@
 
   <%# accordian item for the major task %>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+    <h2 class="accordion-header" id="panelsStayOpen-heading-<%=index%>">
 
       <button class="accordion-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-        aria-controls="panelsStayOpen-collapseOne"
+        data-bs-target="#panelsStayOpen-collapse-<%=index%>" aria-expanded="true"
+        aria-controls="panelsStayOpen-collapse-<%=index%>"
       >
         <%# Title of the subtask %>
         <strong>TASK:<%= task.title %></strong>
@@ -15,9 +15,9 @@
 
     </h2>
 
-    <div id="panelsStayOpen-collapseOne"
+    <div id="panelsStayOpen-collapse-<%=index%>"
       class="accordion-collapse collapse show"
-      aria-labelledby="panelsStayOpen-headingOne"
+      aria-labelledby="panelsStayOpen-heading-<%=index%>"
     >
       <div class="accordion-body">
         <%# Description of the subtask. %>

@@ -1,0 +1,7 @@
+<%# List of all the users tasks. %>
+<h2 class="text-center mt-3">YOUR TASKS</h2>
+
+<% @tasks.each_with_index do |task, index| %>
+  <h4 class="mt-3"><%= task.property.name %></h4>
+  <%= render 'taskaccordian', task: task, index: index %>
+<% end %>
