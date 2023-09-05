@@ -1,32 +1,12 @@
 <% documents.each do |document| %>
 
-  <%= link_to document.file.url, class: 'p-0 col-2 m-2', target: "_blank" do %>
-    <div class="card" style="height: 100%;">
-      <%= cl_image_tag "https://source.unsplash.com/random/?house", height: 100,
-          crop: :fill, style: "object-fit: cover; width: 100%;", class: "p-1"
-      %>
+  <%= link_to document.file.url, class: 'p-0 col-3 m-2', target: "_blank" do %>
+    <div class="card">
       <div class="card-body">
-        <%=document.title%>
-        <%= document.document_type %>
+        <h5 class="card-title"><i class="fa-solid fa-file-lines"></i> <%= document.title.capitalize %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= document.document_type %></h6>
+        <p class="card-text"> </p>
       </div>
     </div>
   <% end %>
-
-    <!---
-  <strong>
-    <%=document.title%>
-  </strong>
-    <%# logic to view the document url. %>
-    <% if document.file.attached? %>
-      <%= link_to "Click here to view #{document.title}", document.file.url %>
-    <% end %>
-    <%# Edit the document details %>
-    <%= render 'documents/documentform', property: document.property, document: document %>
-    <%# delete button %>
-    <%= link_to "Delete Document",
-            document_path(document),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the document?"},
-            class: "btn btn-danger"
-    %>
-    --->
 <% end %>
