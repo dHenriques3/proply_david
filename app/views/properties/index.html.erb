@@ -1,12 +1,14 @@
 <%# This code connects the div below to the map_controller %>
-<div style="width: 100%; height: 450px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  class = "m-2">
-</div>
+<div class="container mt-5">
 
-  <div class="cards p-3" id="properties">
+  <div style="width: 100%; height: 450px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
+
+  <div class="cards mt-4" id="properties">
     <% @properties.each do |property| %>
       <%= link_to property_path(property.id) do %>
         <div class="card-product mt-0">
@@ -18,7 +20,6 @@
             <div class="property-details">
               <p><%= property.description.capitalize %></p>
               <p><%= property.address %></p>
-              <p><%# link_to "Show property", property %></p>
             </div>
           </div>
         </div>
@@ -26,14 +27,21 @@
     <% end %>
   </div>
 
+  <button class="btn btn-primary float" data-bs-toggle="modal" data-bs-target="#propertyModal">
+    <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+  </button>
 
-  <h1>Add a property</h1>
-  <%# rendering the form to create a property %>
-  <%= render 'propertyform', property: @property  %>
+</div>
+
+<%= render 'modal' %>
 
 <!---
   the test version
   <%# This is the list of all the properties that user owns. %>
+
+  <h1>Add a property</h1>
+  <%# rendering the form to create a property %>
+  <%#= render 'propertyform', property: @property  %>
 
   <h1>Properties#index</h1>
   <p>Find me in app/views/properties/index.html.erb</p>

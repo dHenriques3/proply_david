@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon  <%= 'd-none' if params[:action] == "home" %>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top <%= 'd-none' if params[:action] == "home" %>">
   <div class="container">
     <%= link_to properties_path, class: "navbar-brand" do %>
       <%= image_tag 'logo.png'%>
