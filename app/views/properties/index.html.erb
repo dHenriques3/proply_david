@@ -12,12 +12,14 @@
     <% @properties.each do |property| %>
       <%= link_to property_path(property.id) do %>
         <div class="card-product mt-0">
+
           <%# image from cloudinary %>
           <% if property.images.attached? %>
             <%= cl_image_tag property.images.first.key, crop: :fill %>
           <% else %>
             <%= image_tag 'logo.png', crop: :fill %>
           <% end %><%# end of image from cloudinary %>
+
           <div class="card-product-infos">
             <div class="property-name" style="text-decoration: none">
               <h2><%= property.name.titleize %></h2>
