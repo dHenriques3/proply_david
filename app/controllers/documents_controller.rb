@@ -1,4 +1,8 @@
 class DocumentsController < ApplicationController
+  def index
+    @properties = Property.where("user_id = ?", current_user.id)
+  end
+
   def create
     @property = Property.find(params[:property_id])
     @document = Document.new(document_params)
