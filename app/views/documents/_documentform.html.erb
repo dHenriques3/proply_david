@@ -3,7 +3,7 @@
 <%= simple_form_for [property, document] do |f| %>
   <%= f.input :title %>
   <%= f.input :document_type, collection: ["EPC","Floor Plan","Council Tax", "Title", "Tenancy Agreement", "Other"] %>
-  <%= f.input :certification_date %>
+  <%= f.input :certification_date, html5: true %>
   <%= f.input :file, as: :file %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

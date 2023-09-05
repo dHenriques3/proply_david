@@ -1,0 +1,5 @@
+ <h2 class="text-center mt-3">TENANCIES</h2>
+<% @properties.each do |property| %>
+  <h3><%= property.name%></h3>
+  <%= render 'properties/tenancy_details', property: property %>
+<% end %>

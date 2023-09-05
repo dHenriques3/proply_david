@@ -1,0 +1,33 @@
+ <h2 class="text-center mt-3">DOCUMENTS</h2>
+  <% @properties.each_with_index do |property, index| %>
+
+    <div class="row">
+      <% property.documents.each do |document| %>
+        <div  class="col-3 mt-3" data-controller="editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
+          <div class="card position-relative">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fa-solid fa-file-lines"></i> <%= document.title.capitalize %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= document.document_type %></h6>
+              <p class="card-text"> </p>
+              <%= link_to "VIEW", document.file.url, target: "_blank", class: "btn btn-primary text-light", style: "width: 100%;"%>
+              <div class="d-none" data-editbutton-target = "editBtn">
+                <%=link_to '', property_path(property), class: "btn fa-solid fa-building position-absolute", style: "top:8px; right:8px;" %>
+                <%# edit button to edit the document %>
+                <button class= 'btn text-center position-absolute' style ="top:32px; right:8px;" data-action="click->editbutton#showdocform" >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <%# edit forms %>
+          <div class="card mt-1 d-none" data-editbutton-target="docEditForm">
+            <div class="card-body">
+              <%= render 'documentform', property: document.property, document: document %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  <% end %>

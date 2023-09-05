@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :properties do
     resources :documents, only: %i[create update]
     resources :tasks, only: %i[create show]
-    resources :tenancies
+    resources :tenancies, only: :create
   end
   resources :documents, only: %i[destroy]
   resources :tasks, only: %i[update destroy] do
@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :subtasks, only: %i[destroy]
 
   resources :tasks, only: %i[index]
-  resources :documents, only: %i[index]
+  resources :documents, only: %i[index show]
+  resources :tenancies, only: :index
 end
