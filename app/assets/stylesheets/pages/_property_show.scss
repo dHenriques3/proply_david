@@ -22,6 +22,29 @@ div.document-block-bg{
   border-radius: 50%;
 }
 
+.document-card {
+  position: relative;
+  .popover {
+    opacity: 0;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    padding: 8px;
+    font-size: 0.8rem;
+    background: white;
+    border-radius: 3px;
+    color: black;
+    transition: opacity .3s ease;
+     p {
+      margin: 0;
+     }
+  }
+  &:hover {
+    .popover {
+      opacity: 1;
+    }
+  }
+}
 
 // Property Show Page Card With property details
 .property-show-banner {

@@ -1,11 +1,13 @@
 <% documents.each do |document| %>
 
   <%= link_to document.file.url, class: 'p-0 col-3 m-2', target: "_blank" do %>
-    <div class="card">
-      <div class="card-body">
+    <div class="card document-card">
+      <div class="card-body position-relative">
         <h5 class="card-title"><i class="fa-solid fa-file-lines"></i> <%= document.title.capitalize %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= document.document_type %></h6>
-        <p class="card-text"> </p>
+      </div>
+      <div class="popover">
+        <p>Click to view</p>
       </div>
     </div>
   <% end %>

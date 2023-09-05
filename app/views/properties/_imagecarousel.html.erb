@@ -2,11 +2,16 @@
   <div class="carousel-inner">
 
     <div class="carousel-item active">
+
       <% if property.images.attached? %>
         <%= cl_image_tag property.images.first.key, class:"d-block", crop: :fill, style: "width:100%; height:100%; object-fit:cover"%>
       <% else %>
-        <h2 class="text-center"> ADD IMAGES </h2>
+        <div style="margin-left: 150px;">
+          <%= image_tag 'logo.png', crop: :fill, style: "width:50%; height:50%;" %>
+          <h6> ADD IMAGES</h6>
+        </div>
       <% end %>
+
     </div>
 
     <% if property.images.attached? %>
