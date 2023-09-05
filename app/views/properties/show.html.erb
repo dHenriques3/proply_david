@@ -48,9 +48,9 @@
 
     <%# this code below allows us to render the carousel to see our documents. %>
     <div class="documents-block position-relative d-none col-12" data-tab-target="documents">
-      <h1>MY DOCUMENTS</h1>
-      <div class="row m-0">
-        <div class="document-scrollable-carousel col-12 row flex-nowrap">
+      <div class="document-block-bg row m-0">
+        <h2>MY DOCUMENTS</h2>
+        <div class="document-scrollable-carousel col-12 row flex-nowrap p-0">
           <%= render 'documents/document', documents: @property.documents %>
           <%# Align Button element%>
         </div>
@@ -65,7 +65,7 @@
         <%# button to add tasks %>
         <button class= 'btn btn-primary text-center btn-round position-absolute'
                 data-bs-toggle="modal" data-bs-target="#taskModal"
-                style="top:16px; right:32px;"
+                style="top:16px; right:16px;"
         >
           <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
         </button>
@@ -78,7 +78,7 @@
         <%# button to add tasks %>
         <button class= 'btn btn-primary text-center btn-round position-absolute'
                 data-bs-toggle="modal" data-bs-target="#tenancyModal"
-                style="top:16px; right:32px;"
+                style="top:16px; right:16px;"
         >
           <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
         </button>
@@ -86,8 +86,6 @@
         <%= render 'tenancy_details', property: @property %>
     </div>
   </div>
-
-
 
   <%#= render 'documents/documentform', property: @property, document: @document %>
   <%#= render "tasks/taskform", task: @task, property: @property %>
