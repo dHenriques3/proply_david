@@ -14,6 +14,10 @@ class TenanciesController < ApplicationController
     end
   end
 
+  def index
+    @properties = Property.where("user_id = ?", current_user.id)
+  end
+
   private
 
   def tenancy_params

@@ -18,9 +18,9 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @property = @document.property
     if @document.update(document_params)
-      redirect_to property_path(@property), notice: "Your document was updated successfully."
+      redirect_to documents_path, notice: "Your document was updated successfully."
     else
-      redirect_to property_path(@property), notice: "Your document failed to update."
+      redirect_to documents_path, notice: "Your document failed to update."
     end
   end
 
@@ -28,9 +28,9 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @property = @document.property
     if @document.destroy
-      redirect_to property_path(@property), notice: "Document successfully removed!"
+      redirect_to documents_path, notice: "Document successfully removed!"
     else
-      redirect_to property_path(@property), notice: "Failed to remove document!"
+      redirect_to documents_path, notice: "Failed to remove document!"
     end
   end
 

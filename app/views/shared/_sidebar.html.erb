@@ -4,13 +4,13 @@
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p> <%= link_to '🏡 My Properties ', properties_path %> </p>
-    <p> <%= link_to '👨‍👩‍👧 Tenancy Details ' , properties_path %> </p>
-    <p> <%= link_to '📋 All Tasks ', tasks_path %> </p>
-    <p> <%= link_to '📂 All Documents ', properties_path %> </p>
-    <p> <%= link_to '🏡 Home', root_path %> </p>
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+  <div class="offcanvas-body position-relative">
+    <p> <%= link_to '🏡 Properties ', properties_path %> </p>
+    <p> <%= link_to '👨‍👩‍👧 Tenancies ' , tenancies_path %> </p>
+    <p> <%= link_to '📋 Tasks ', tasks_path %> </p>
+    <p> <%= link_to '📂 Documents ', documents_path %> </p>
+    <p> <%= link_to 'Home', root_path, class: "position-absolute mb-3", style: "bottom: 16px; left: 16px"  %> </p>
+    <%= link_to  destroy_user_session_path, data: {turbo_method: :delete}, class: "position-absolute", style: "bottom: 16px; right: 8px" do %>
     <p>
       <i class="fas fa-sign-out-alt"></i> Log out
     </p>
