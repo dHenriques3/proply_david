@@ -10,12 +10,19 @@ class PropertiesController < ApplicationController
     @task = Task.new
     # for creating a new document
     @document = Document.new
+
+    # this handles the chat modal
+    @chatroom = @property.chatrooms.first
+    @message = Message.new
   end
 
   def create
     @property = Property.new(property_params)
     @property.user = current_user
     if @property.save
+      chatroom = Chatroom.new
+      chatroom.property = @property
+      chatroom.save!
       redirect_to properties_path
     else
       render :new, status: :unprocessable_entity, alert: 'Your property was not created. Try Again. '

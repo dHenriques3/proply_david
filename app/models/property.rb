@@ -1,7 +1,7 @@
 class Property < ApplicationRecord
   belongs_to :user
 
-  has_one :chatroom
+  has_many :chatrooms
 
   has_many :tenancies, dependent: :destroy
   has_many :tasks, dependent: :destroy
