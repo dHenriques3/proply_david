@@ -13,10 +13,16 @@ Rails.application.routes.draw do
     resources :tasks, only: %i[create show]
     resources :tenancies, only: :create
   end
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
   resources :documents, only: %i[destroy]
   resources :tasks, only: %i[update destroy] do
     resources :subtasks, only: %i[create update]
   end
+
   resources :subtasks, only: %i[destroy]
 
   resources :tasks, only: %i[index]

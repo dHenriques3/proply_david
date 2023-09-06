@@ -34,6 +34,7 @@
     <% end %>
   </div>
 
+
   <button class="btn btn-primary float" data-bs-toggle="modal" data-bs-target="#propertyModal">
     <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
   </button>
@@ -62,9 +63,6 @@
     <h5>No profile picture</h5>
   <% end %>
 
-  <h1>Add a property</h1>
-  <%# rendering the form to create a property %>
-  <%= render 'propertyform', property: @property  %>
 
   <%# TODO: Refactor code to render cards showing all properties. %>
   <div id="properties">

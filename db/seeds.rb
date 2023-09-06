@@ -64,7 +64,6 @@ puts 'Creating 3 fake users...'
         completion_date: Date.today+rand(10000),
         title: ["Renovation","Viewing", "Electrical Work", "Gas Work"].sample,
         property: property,
-        task: task,
         user: user
       )
     end

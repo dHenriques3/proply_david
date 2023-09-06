@@ -1,6 +1,7 @@
 <div class="container d-flex flex-column">
   <div class="d-flex m-0 justify-content-between">
 
+
     <div class=" col-7 property-show-banner position-relative mt-5"
       data-controller = "editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
       <%# rendering image carousel %>
@@ -34,6 +35,11 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
+    <%= link_to '', '' ,
+      class: "btn fa-regular fa-message",
+      data: {bs_toggle: "offcanvas", bs_target: "#offcanvasTop", aria_controls: "offcanvasTop"}
+    %>
+    
   </div>
 
 
@@ -96,8 +102,19 @@
                 class: "btn btn-danger"
     %>
 
+
   <%= render 'modal' %><%# Property Form Modal %>
   <%= render 'documents/modal' %><%# ADD Document Form Modal %>
   <%= render 'tasks/modal' %><%# ADD Task Form Modal %>
   <%= render 'tenancies/modal' %>
+
+<div class="offcanvas offcanvas-top" tabindex="1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTopLabel"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <%= render 'chatrooms/chat'  %>
+  </div>
+
 </div>
