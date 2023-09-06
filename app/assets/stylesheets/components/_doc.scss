@@ -1,0 +1,19 @@
+.doc-block {
+  background-color: $white;
+  border: 1px solid $bronze;
+  padding: 20px;
+  margin-bottom: 16px;
+
+  &:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .card:hover {
+    background-color: $slate-gray;
+    color: $white;
+
+    .text-muted {
+      color: $white !important;
+    }
+  }
+}

@@ -11,8 +11,12 @@
   <%= f.input :description, label: "Notes" %>
 
   <%= f.input :images, as: :file,
-  input_html: { multiple: true }
+    input_html: { multiple: true }
   %>
+
+  <% property.images.each do |image| %>
+    <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+  <% end %>
 
   <%= f.button :submit, class: "btn btn-primary text-light", style: "width: 100%" %>
 <% end %>
