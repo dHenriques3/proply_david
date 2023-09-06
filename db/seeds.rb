@@ -8,15 +8,22 @@
 
 require 'faker'
 
+User.destroy_all
+puts "db cleaned"
+
 puts 'Creating 3 fake users...'
 
+n = 1
+
 2.times do
+
+  n += 1
 
   puts 'creating user'
   user = User.new(
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
-    email: Faker::Internet.email,
+    email: "user#{n}@lw.org",
     password: "password"
   )
   user.save!
@@ -30,9 +37,12 @@ puts 'Creating 3 fake users...'
       name: Faker::Travel::TrainStation.name(region: 'united_kingdom', type: 'metro'),
       description: Faker::Marketing.buzzwords,
       property_type: ["Apartment", "Detached", "Semi-detached", "Terraced", "Land", "Other"].sample,
-      address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      address: ["London", "Paris", "Madrid", "Luxembourg", "Mexico City", "Brimingham"].sample,
       user: user
     )
+
+    chatroom = Chatroom.new
+    chatroom.property = property
 
     file = URI.open("https://source.unsplash.com/random?house")
     file2 = URI.open("https://source.unsplash.com/random?livingroom")

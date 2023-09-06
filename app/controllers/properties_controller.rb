@@ -18,9 +18,9 @@ class PropertiesController < ApplicationController
     @task = Task.new
     # for creating a new document
     @document = Document.new
-    
+
     # this handles the chat modal
-    @chatroom = @property.chatrooms.first
+    @chatroom = @property.chatroom
     @message = Message.new
 
     # marker for the map
