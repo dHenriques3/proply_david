@@ -1,4 +1,8 @@
 class TasksController < ApplicationController
+  def index
+    @tasks = Task.all.where("user_id = ?", current_user.id).order('completion_date DESC')
+  end
+
   def create
     @property = Property.find(params[:property_id])
     @task = Task.new(task_params)

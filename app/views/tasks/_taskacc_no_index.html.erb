@@ -1,0 +1,67 @@
+<%# This appears on the task show page. %>
+<div class="accordion" id="accordionPanelsStayOpenExample">
+
+  <%# accordian item for the major task %>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-heading">
+
+      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapse-" aria-expanded="true"
+        aria-controls="panelsStayOpen-collapse-"
+      >
+        <%# Title of the subtask %>
+        <strong>TASK:<%= task.title %></strong>
+      </button>
+
+    </h2>
+
+    <div id="panelsStayOpen-collapse-"
+      class="accordion-collapse collapse show"
+      aria-labelledby="panelsStayOpen-heading-"
+    >
+      <div class="accordion-body">
+        <%# Description of the subtask. %>
+        <strong><%= task.description %></strong>
+        <br>
+        <strong>Start: </strong><%= task.start_date %>
+        <br>
+        <strong>End: </strong><%= task.completion_date %>
+      </div>
+    </div>
+  </div><%# end of accordian for MAJOR TASK. %>
+
+  <% task.subtasks.each_with_index do |subtask, index| %>
+    <%# this logic prevents the subtasks from ever opening at the same time in teh accordion.%>
+    <% n = rand(0..10000) %>
+    <% index+=1 %>
+    <%# --------- %>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-heading<%= index*n %>">
+
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapse<%=index * n %>" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapse<%=index * n %>"
+        >
+          <%# Title of the subtask %>
+          <strong> SUBTASK <%=index + 1%>:</strong> <%= subtask.title %>
+        </button>
+
+      </h2>
+
+      <div id="panelsStayOpen-collapse<%=index * n %>"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-heading<%=index * n %>"
+      >
+        <div class="accordion-body">
+          <%# Description of the subtask. %>
+          <strong><%= subtask.description %></strong>
+          <br>
+          <strong>Start: </strong><%= subtask.start_date %>
+          <br>
+          <strong>End: </strong><%= subtask.completion_date %>
+        </div>
+      </div>
+    </div><%# repeating accordian subtask item. %>
+  <% end %>
+
+</div>
