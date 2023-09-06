@@ -10,9 +10,10 @@
         </h2>
         <div id="panelsStayOpen-collapse-S<%= index%>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading-S<%= index%>">
           <div class="accordion-body">
-          <strong><%= subtask.title %></strong>
-          <br>
-          <%= subtask.description %>
+            <strong><%= subtask.title %></strong>
+            <br>
+            <%= subtask.description %>
+            <%= link_to subtask.completed ? "✅" : "⬜️", subtask_path(subtask, completed: !subtask.completed), data: {turbo_method: :patch} %>
           </div>
         </div>
       </div>

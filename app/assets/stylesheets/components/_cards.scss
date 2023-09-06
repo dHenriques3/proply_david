@@ -1,3 +1,7 @@
+.card{
+  background-color: $white;
+}
+
 .card-product {
   overflow: hidden;
   height: 200px;
@@ -6,6 +10,7 @@
   align-items: center;
   border-radius: 10px;
   margin-top:20px;
+  border: 1px solid $bronze ;
 }
 
 .card-product:hover {
@@ -40,7 +45,8 @@
 }
 
 .card-product:hover {
-  background: #ed7f08;
+  background: $bronze;
+  // background: #ed7f08;
   opacity: 2;
   color: white;
 }

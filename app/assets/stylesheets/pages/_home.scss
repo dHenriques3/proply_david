@@ -5,7 +5,7 @@
 //}
 
 .homepage {
-background-color: #d3691f;
+  background-color: $bronze;
   // height: 110vh;
   // width: 100vh;
 
@@ -35,14 +35,15 @@ background-color: #d3691f;
 .home {
   width: 210px;
   margin: 0 auto;
-  background:#fdf6e9;
+  background: $cosmic-latte;
   border-color: black;
   padding: 8px 18px;
   color: black;
   border-radius: 8px;
   border: none;
   &:hover {
-    background: #fdf6e9;
+    background: $slate-gray;
+    color: $white;
   }
 }
 

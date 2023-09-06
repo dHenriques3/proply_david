@@ -1,21 +1,18 @@
 // Property Show Page Document Carousel
 div.document-scrollable-carousel {
+  background-color: $white;
   overflow-x: auto;
   white-space: nowrap;
-  height: 100px;
+  height: 220px;
   margin: 0;
-}
+  padding: 0;
 
-div.document-block-bg{
-  border: 1px solid orange;
-  background-color: $white;
-  padding: 20px;
 }
 
 .document-add-button {
   position: absolute;
   right: 16px;
-  top: 16px;
+  bottom: 16px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -51,13 +48,15 @@ div.document-block-bg{
   gap: 30px;
   overflow: hidden;
   height: 400px;
-
   background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
   align-items: center;
   border-radius: 10px;
   margin: 0px;
+  border: 1px solid $bronze;
+
+  &:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 
   .property-banner-text {
     flex-grow: 2;
@@ -69,7 +68,7 @@ div.document-block-bg{
 
 // Tasks Container On the property show page.
 .tasks-container {
-  border: 1px solid orange;
+  border: 1px solid $bronze;
   padding: 20px;
   background-color: $white;
 
@@ -86,17 +85,8 @@ div.document-block-bg{
       margin-left: auto;
       width: 30px;
       height: 30px;
-      border: 1px #d3691f;
+      border: 1px #ed7f08;
       border-radius: 50%;
     }
-  }
-}
-
-.btn-chat {
-  padding: 12px 16px;
-  border-radius: 50%;
-  i {
-    color: white;
-    font-size: 18px;
   }
 }

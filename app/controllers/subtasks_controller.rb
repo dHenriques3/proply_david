@@ -13,13 +13,14 @@ class SubtasksController < ApplicationController
 
   def update
     @subtask = Subtask.find(params[:id])
-    @task = Task.find(params[:task_id])
     @property = @subtask.task.property
-
-    if @subtask.update(subtask_params)
-      redirect_to property_task_path(@property, @task), notice: "Subtask Updated!"
+    if params[:completed].present?
+      @subtask.completed = params[:completed]
+    end
+    if @subtask.save!
+      redirect_to property_path(@property), notice: "Subtask Updated!"
     else
-      redirect_to property_task_path(@property, @task), notice: "Subtask Update Failed!"
+      redirect_to property_path(@property), notice: "Subtask Update Failed!"
     end
   end
 

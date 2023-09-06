@@ -10,9 +10,10 @@
 	height:60px;
 	bottom:40px;
 	right:40px;
-	color:#FFF;
+	color: $white;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
   font-size: 18px;
+  border: 3px solid $cosmic-latte;
 }
