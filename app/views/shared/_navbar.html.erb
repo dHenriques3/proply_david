@@ -31,7 +31,11 @@
                   <button class="btn bar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                   <i class="fa-solid fa-bars fa-lg" style="color: #000000;"></i></button>
                 <% else %>
-                  <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                  <%= image_tag 'person.png', crop: :fill, width: 50, height: 50,
+                      style: "border-radius:50%", data: {bs_toggle: "offcanvas", bs_target: "#offcanvasWithBothOptions"},
+                      aria: {controls: "offcanvasWithBothOptions"}
+                  %>
+                  <button class="btn bar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                   <i class="fa-solid fa-bars fa-lg" style="color: #000000;"></i></button>
                 <% end %>
 
