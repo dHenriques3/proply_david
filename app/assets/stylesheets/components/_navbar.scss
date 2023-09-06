@@ -1,10 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: $white;
   margin: 0;
   padding: 0;
   // border: 3px solid blue;
-  border-bottom: 1px solid black; /* Adjust color and width as needed */
+  border-bottom: 3px solid $bronze; /* Adjust color and width as needed */
   height: 100px
 }
 
@@ -14,4 +14,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 75px;
+}
+
+.nav-logo-text {
+  color: $bronze;
 }

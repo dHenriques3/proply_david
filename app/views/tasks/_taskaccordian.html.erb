@@ -59,6 +59,8 @@
           <strong>Start: </strong><%= subtask.start_date %>
           <br>
           <strong>End: </strong><%= subtask.completion_date %>
+          <br>
+          <%= link_to subtask.completed ? "✅" : "⬜️", subtask_path(subtask, completed: !subtask.completed), data: {turbo_method: :patch} %>
         </div>
       </div>
     </div><%# repeating accordian subtask item. %>

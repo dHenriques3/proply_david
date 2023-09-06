@@ -1,7 +1,7 @@
 <%# This code connects the div below to the map_controller %>
 <div class="container mt-5">
 
-  <div style="width: 100%; height: 450px;"
+  <div style="width: 100%; height: 450px; border: 5px solid white;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
