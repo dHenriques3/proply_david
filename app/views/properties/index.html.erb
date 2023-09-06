@@ -8,9 +8,9 @@
   >
   </div>
 
-  <div class="cards mt-4" id="properties">
+  <div class="cards row mt-4" id="properties">
     <% @properties.each do |property| %>
-      <%= link_to property_path(property.id) do %>
+      <%= link_to property_path(property.id), class:"col-4 mb-4" do %>
         <div class="card-product mt-0">
 
           <%# image from cloudinary %>
@@ -25,7 +25,6 @@
               <h2><%= property.name.titleize %></h2>
             </div>
             <div class="property-details">
-              <p><%= property.description.capitalize %></p>
               <p><%= property.address %></p>
             </div>
           </div>
@@ -73,7 +72,7 @@
           <%= link_to "Show property", property %>
         </p>
 
-        <h2>Edit Your Property🏡 </h2>
+        <h2>Edit Your Property🏡</h2>
         <%# rendering the form partial to update a property %>
         <%= render 'propertyform', property: property %>
 
@@ -85,4 +84,5 @@
       <% end %>
     </div>
 
-  </div> --->
+  </div>
+--->
