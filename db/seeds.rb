@@ -44,11 +44,11 @@ n = 1
     chatroom = Chatroom.new
     chatroom.property = property
 
-    file = URI.open("https://source.unsplash.com/random?house")
-    file2 = URI.open("https://source.unsplash.com/random?livingroom")
-    file3 = URI.open("https://source.unsplash.com/random?garage")
-    file4 = URI.open("https://source.unsplash.com/random?foyer")
-    file5 = URI.open("https://source.unsplash.com/random?facade")
+    file = URI.open("https://source.unsplash.com/random?georgian%20house%20uk")
+    file2 = URI.open("https://source.unsplash.com/random?georgian%20bathroom%20uk")
+    file3 = URI.open("https://source.unsplash.com/random?georgian%20livingroom%20uk")
+    file4 = URI.open("https://source.unsplash.com/random?georigian%20kitchen%20uk")
+    file5 = URI.open("https://source.unsplash.com/random?bedroom")
 
     property.images.attach(io: file, filename: "adiddas.png", content_type: "image/png")
     property.images.attach(io: file2, filename: "adiddas.png", content_type: "image/png")

@@ -1,15 +1,13 @@
- <h2 class="text-center mt-3">DOCUMENTS</h2>
-
 <% @properties.each_with_index do |property, index| %>
 
   <% if property.documents.any? %>
-    <div class="doc-block row">
-      <h3><%= property.name %></h3>
+    <div class="doc-block row mt-4">
+      <h3>📂<%= property.name %></h3>
       <% property.documents.each do |document| %>
-        <div  class="col-3 mt-3" data-controller="editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
+        <div  class="col-3" data-controller="editbutton" data-action="mouseover->editbutton#showbtn mouseleave->editbutton#hidebtn">
           <div class="card position-relative">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-file-lines"></i> <%= document.title.capitalize %></h5>
+              <h5 class="card-title"><i class="fa-solid fa-file-lines" style="margin-right: 8px;"></i><%= document.title.capitalize %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= document.document_type %></h6>
               <p class="card-text"> </p>
               <%= link_to "VIEW", document.file.url, target: "_blank", class: "btn btn-primary text-light", style: "width: 100%;"%>
@@ -33,8 +31,8 @@
       <% end %>
     </div>
   <% else %>
-    <div class="doc-block">
-      <h3><%= property.name %></h3>
+    <div class="doc-block mt-4">
+      <h3>📁<%= property.name %></h3>
       <p> You have no documents for this property.</p>
     </div>
   <% end %>
