@@ -19,6 +19,7 @@ div.document-scrollable-carousel {
   background-color: $white;
   padding: 20px;
   border: 1px solid $bronze;
+  border-radius: $bdr-rad;
 }
 
 .document-add-button {
@@ -40,7 +41,7 @@ div.document-scrollable-carousel {
     padding: 8px;
     font-size: 0.8rem;
     background: white;
-    border-radius: 3px;
+    border-radius: $bdr-rad;
     color: black;
     transition: opacity .3s ease;
      p {
@@ -62,7 +63,7 @@ div.document-scrollable-carousel {
   height: 400px;
   background: $white;
   align-items: center;
-  border-radius: 10px;
+  border-radius: $bdr-rad;
   margin: 0px;
   border: 1px solid $bronze;
 
@@ -83,6 +84,7 @@ div.document-scrollable-carousel {
   border: 1px solid $bronze;
   padding: 20px;
   background-color: $white;
+  border-radius: $bdr-rad;
 
   .task-row {
     border: 1px solid grey;

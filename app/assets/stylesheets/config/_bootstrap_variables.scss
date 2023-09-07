@@ -24,7 +24,15 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+// border radius
+$bdr-rad: 16px;
+
+// Accordion Bootstrap Variables
 $accordion-bg:  $white;
+$accordion-border-radius:  $bdr-rad;
+
+// Table Bootstrap Variables
 $table-bg:      $slate-gray;
 $table-color:   $white;
 $table-hover-color:  $cosmic-latte;

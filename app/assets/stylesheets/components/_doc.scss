@@ -3,6 +3,7 @@
   border: 1px solid $bronze;
   padding: 20px;
   margin-bottom: 16px;
+  border-radius: $bdr-rad;
 
   &:hover{
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -15,5 +16,9 @@
     .text-muted {
       color: $white !important;
     }
+  }
+
+  .btn {
+    border-radius: $bdr-rad;
   }
 }

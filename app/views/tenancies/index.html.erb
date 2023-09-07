@@ -1,11 +1,11 @@
- <h2 class="text-center mt-3">TENANCIES</h2>
 <% @properties.each do |property| %>
+  <div class="doc-block mt-4">
+    <h3>👨‍👩‍👧<%= property.name%></h3>
 
-  <h3><%= property.name%></h3>
-
-  <% if property.tenancies.any? %>
-    <%= render 'properties/tenancy_details', property: property %>
-  <% else %>
-    <p>You have no tenancies related to this property.</p>
-  <% end %>
+    <% if property.tenancies.any? %>
+      <%= render 'properties/tenancy_details', property: property %>
+    <% else %>
+      <p>You have no tenancies related to this property.</p>
+    <% end %>
+  </div>
 <% end %>
