@@ -1,18 +1,30 @@
 // Property Show Page Document Carousel
 div.document-scrollable-carousel {
-  background-color: $white;
   overflow-x: auto;
   white-space: nowrap;
-  height: 220px;
   margin: 0;
   padding: 0;
 
+  .card:hover {
+    background-color: $slate-gray;
+    color: $white;
+
+    .text-muted{
+      color: $white !important;
+    }
+  }
+}
+
+.document-block-bg {
+  background-color: $white;
+  padding: 20px;
+  border: 1px solid $bronze;
 }
 
 .document-add-button {
   position: absolute;
   right: 16px;
-  bottom: 16px;
+  top: 16px;
   width: 40px;
   height: 40px;
   border-radius: 50%;

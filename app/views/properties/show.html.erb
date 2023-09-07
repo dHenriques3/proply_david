@@ -35,11 +35,6 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-    <%= link_to '', '' ,
-      class: "btn fa-regular fa-message",
-      data: {bs_toggle: "offcanvas", bs_target: "#offcanvasTop", aria_controls: "offcanvasTop"}
-    %>
-
   </div>
 
 
@@ -55,10 +50,15 @@
     <%# this code below allows us to render the carousel to see our documents. %>
     <div class="documents-block position-relative d-none col-12" data-tab-target="documents">
       <div class="document-block-bg row m-0">
-        <h2>MY DOCUMENTS</h2>
+        <h2>DOCUMENTS</h2>
         <div class="document-scrollable-carousel col-12 row flex-nowrap p-0">
-          <%= render 'documents/document', documents: @property.documents %>
-          <%# Align Button element%>
+
+          <% if @property.documents.any? %>
+            <%= render 'documents/document', documents: @property.documents %>
+          <% else %>
+            <p>You have no documents.</p>
+          <% end %>
+
         </div>
           <button class= 'document-add-button btn btn-primary text-center' data-bs-toggle="modal" data-bs-target="#documentModal">
             <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
@@ -66,6 +66,7 @@
       </div>
     </div>
 
+    <%# tasks container %>
     <div class="tasks-container position-relative" data-tab-target="tasks">
       <h2>TASKS</h2>
         <%# button to add tasks %>
@@ -75,10 +76,14 @@
         >
           <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
         </button>
-
-        <%= render 'task_subtask_accordion', property: @property %>
+        <% if @property.tasks.any? %>
+          <%= render 'task_subtask_accordion', property: @property %>
+        <% else %>
+          <p>You have no tasks.</p>
+        <% end %>
     </div>
 
+    <%# tenancy container %>
     <div class="tasks-container position-relative d-none" data-tab-target="tenancies">
       <h2>TENANCY DETAILS</h2>
         <%# button to add tasks %>
@@ -88,19 +93,19 @@
         >
           <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
         </button>
-
-        <%= render 'tenancy_details', property: @property %>
+        <% if @property.tenancies.any? %>
+          <%= render 'tenancy_details', property: @property %>
+        <% else %>
+          <p>You have no tenancies.</p>
+        <% end %>
     </div>
   </div>
 
-  <%#= render 'documents/documentform', property: @property, document: @document %>
-  <%#= render "tasks/taskform", task: @task, property: @property %>
-  <%#
-    <%= link_to "Delete Task",
-                task_path(@task),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the task?"},
-                class: "btn btn-danger"
-    %>
+  <%# This button handles opening the chatroom. %>
+  <button class="btn btn-primary float" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+          aria-controls= "offcanvasTop">
+    <i class="fa-regular fa-message" style="color: #ffffff;"></i>
+  </button>
 
 
   <%= render 'modal' %><%# Property Form Modal %>
@@ -108,13 +113,13 @@
   <%= render 'tasks/modal' %><%# ADD Task Form Modal %>
   <%= render 'tenancies/modal' %>
 
-<div class="offcanvas offcanvas-top" tabindex="1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasTopLabel"></h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas offcanvas-top" tabindex="1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel"></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <%= render 'chatrooms/chat'  %>
+    </div>
   </div>
-  <div class="offcanvas-body">
-    <%= render 'chatrooms/chat'  %>
-  </div>
-
 </div>

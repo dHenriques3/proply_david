@@ -19,21 +19,20 @@
     font-size:110px;
     color:white;
     font-weight: 40px;
-
+    margin: 0;
   }
 
   p {
     color: white;
     justify-content: center;
     text-align: center;
-    margin:-20px 0 40px 0;
     font-size: 16px;
+    width: 70ch;
   }
 
 }
 
 .home {
-  width: 210px;
   margin: 0 auto;
   background: $cosmic-latte;
   border-color: black;
@@ -57,9 +56,6 @@ height:100vh;
 }
 
 .banner{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   width:50%;
 }
