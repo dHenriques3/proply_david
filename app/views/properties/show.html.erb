@@ -10,8 +10,8 @@
       <div class="property-banner-text">
         <h2><%= @property.name %></h2>
         <h6>-------------------------</h6>
-        <h6><i class="fa-solid fa-house"></i><%= @property.property_type.upcase %></h6>
-        <h6><i class="fa-solid fa-location-dot"></i> <%= @property.address.upcase %></h6>
+        <h6><i class="fa-solid fa-house me-1"></i><%= @property.property_type.upcase %></h6>
+        <h6><i class="fa-solid fa-location-dot me-1"></i> <%= @property.address.upcase %></h6>
         <h6>-------------------------</h6>
         <p><%= @property.description.capitalize %></p>
         <%# button to edit property details. %>
@@ -127,11 +127,7 @@
     </div>
     <div class="offcanvas-body">
       <%= render 'chatrooms/chat'  %>
-<<<<<<< HEAD
     </div>
   </div>
-=======
-  </div>
 
->>>>>>> 2542c85481c9b896a63199cd9ee4fc622e17477a
 </div>
