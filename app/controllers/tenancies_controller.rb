@@ -10,7 +10,7 @@ class TenanciesController < ApplicationController
     if @tenancy.save
       redirect_to property_path(@property)
     else
-      render property_path(@property), status: :unprocessable_entity
+      redirect_to property_path(@property), notice: "User does not exist on Proply. Try Again."
     end
   end
 
