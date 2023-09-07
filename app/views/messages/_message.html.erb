@@ -4,7 +4,7 @@
 
     <div class="message-av me-1">
       <% if message.user.profile_picture.attached? %>
-        <%= image_tag 'logo.png', class: "message-avatar"%>
+        <%= cl_image_tag message.user.profile_picture.key, class: "message-avatar" %>
       <% else %>
         <%= image_tag 'person.png', class: "message-avatar"%>
       <% end %>

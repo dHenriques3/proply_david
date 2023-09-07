@@ -1,13 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top <%= 'd-none' if params[:action] == "home" %>">
   <div class="container">
+
     <nav class="navbar">
+
       <div class="justify-content-center">
-        <span class="navbar-text">
-          <div class="center-propley d-inline-flex">
-            <div style="font-size: 25px;" class="nav-logo-text">PROPLY</div>
-          </div>
-        </span>
+          <%= link_to properties_path do %>
+            <h3 class="basic" style="font-weight: 700;">PROPLY</h3>
+          <% end %>
       </div>
+
     </nav>
 
 
