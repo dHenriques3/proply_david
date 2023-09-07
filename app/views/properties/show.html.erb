@@ -10,8 +10,8 @@
       <div class="property-banner-text">
         <h2><%= @property.name %></h2>
         <h6>-------------------------</h6>
-        <h6><i class="fa-solid fa-house"></i><%= @property.property_type.upcase %></h6>
-        <h6><i class="fa-solid fa-location-dot"></i> <%= @property.address.upcase %></h6>
+        <h6>🏡<%= @property.property_type.upcase %></h6>
+        <h6>📍<%= @property.address.upcase %></h6>
         <h6>-------------------------</h6>
         <p><%= @property.description.capitalize %></p>
         <%# button to edit property details. %>
