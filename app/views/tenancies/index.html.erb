@@ -1,6 +1,6 @@
 <% @properties.each do |property| %>
   <div class="doc-block mt-4">
-    <h3>👨‍👩‍👧<%= property.name%></h3>
+    <h3><i class="fa-solid fa-people-group basic" style="margin-right:4px;"></i><%= property.name%></h3>
 
     <% if property.tenancies.any? %>
       <%= render 'properties/tenancy_details', property: property %>

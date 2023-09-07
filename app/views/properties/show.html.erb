@@ -10,8 +10,8 @@
       <div class="property-banner-text">
         <h2><%= @property.name %></h2>
         <h6>-------------------------</h6>
-        <h6>🏡<%= @property.property_type.upcase %></h6>
-        <h6>📍<%= @property.address.upcase %></h6>
+        <h6> <i class="fa-solid fa-house-chimney basic" style="margin-right: 4px;"></i><%= @property.property_type.upcase %></h6>
+        <h6> <i class="fa-solid fa-location-dot basic" style="margin-right: 5px;"></i><%= @property.address.upcase %></h6>
 
         <h6>-------------------------</h6>
         <p><%= @property.description.capitalize %></p>
@@ -43,15 +43,26 @@
   <div class="mt-3" data-controller="tab">
 
     <div class="d-flex mb-3 w-full">
-      <button class="btn btn-primary col-4 text-light" data-tab-target="taskButton" data-action="click->tab#showtask">📋 Tasks</button>
-      <button class="btn btn-light col-4" data-tab-target="docButton" data-action="click->tab#showdoc">📂 Documents</button>
-      <button class="btn btn-light col-4" data-tab-target="tenancyButton" data-action="click->tab#showtenancy">👨‍👩‍👧 Tenancy Details</button>
+      <button class="btn btn-primary col-4 text-light" data-tab-target="taskButton" data-action="click->tab#showtask">
+        <i class="fa-solid fa-list-check" style="margin-right:4px;"></i>
+        Tasks
+      </button>
+
+      <button class="btn btn-light col-4" data-tab-target="docButton" data-action="click->tab#showdoc">
+        <i class="fa-regular fa-folder-open" style="margin-right:4px;"></i>
+        Documents
+      </button>
+
+      <button class="btn btn-light col-4" data-tab-target="tenancyButton" data-action="click->tab#showtenancy">
+        <i class="fa-solid fa-people-group" style="margin-right:4px;"></i>
+        Tenancy Details
+      </button>
     </div>
 
     <%# this code below allows us to render the carousel to see our documents. %>
     <div class="documents-block position-relative d-none col-12" data-tab-target="documents">
       <div class="document-block-bg row m-0">
-        <h2>📂 DOCUMENTS</h2>
+        <h2><i class="fa-regular fa-folder-open basic" style="margin-right:4px;"></i> DOCUMENTS</h2>
         <div class="document-scrollable-carousel col-12 row flex-nowrap p-0">
 
           <% if @property.documents.any? %>
@@ -69,7 +80,7 @@
 
     <%# tasks container %>
     <div class="tasks-container position-relative" data-tab-target="tasks">
-      <h2>📋 TASKS</h2>
+      <h2><i class="fa-solid fa-list-check basic" style="margin-right:4px;"></i> TASKS</h2>
         <%# button to add tasks %>
         <button class= 'btn btn-primary text-center btn-round position-absolute'
                 data-bs-toggle="modal" data-bs-target="#taskModal"
@@ -86,7 +97,7 @@
 
     <%# tenancy container %>
     <div class="tasks-container position-relative d-none" data-tab-target="tenancies">
-      <h2> 👨‍👩‍👧 TENANCY DETAILS</h2>
+      <h2> <i class="fa-solid fa-people-group basic" style="margin-right:4px;"></i> TENANCY DETAILS</h2>
         <%# button to add tasks %>
         <button class= 'btn btn-primary text-center btn-round position-absolute'
                 data-bs-toggle="modal" data-bs-target="#tenancyModal"

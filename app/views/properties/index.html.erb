@@ -22,10 +22,16 @@
 
           <div class="card-product-infos">
             <div class="property-name" style="text-decoration: none">
-              <h2>🏡<%= property.name.titleize %></h2>
+              <h2>
+                <i class="fa-solid fa-house-chimney basic" style="margin-right: 4px;"></i>
+                <%= property.name.titleize %>
+              </h2>
             </div>
             <div class="property-details">
-              <p>📍<%= property.address %></p>
+              <p>
+                <i class="fa-solid fa-location-dot basic" style="margin-right: 4px;"></i>
+                <%= property.address %>
+              </p>
             </div>
           </div>
         </div>
@@ -72,7 +78,7 @@
           <%= link_to "Show property", property %>
         </p>
 
-        <h2>Edit Your Property🏡</h2>
+        <h2>Edit Your Property</h2>
         <%# rendering the form partial to update a property %>
         <%= render 'propertyform', property: property %>
 

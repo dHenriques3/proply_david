@@ -6,13 +6,34 @@
   </div>
   <div class="offcanvas-body position-relative">
     <div class="sidebar-list ">
-      <p> <%= link_to '🏡 Properties ', properties_path %> </p>
+
+      <%= link_to properties_path do %>
+        <p>
+        <i class="fa-solid fa-house-chimney text-light" style="margin-right: 4px;"></i>
+        Properties
+        </p>
+      <% end %>
+
       <hr class="spacer">
-      <p> <%= link_to '👨‍👩‍👧 Tenancies ' , tenancies_path %> </p>
+      <%= link_to tenancies_path do %>
+        <p>
+          <i class="fa-solid fa-people-group text-light" style="margin-right:8px;"></i> Tenancies
+        </p>
+      <% end %>
+
       <hr class="spacer">
-      <p> <%= link_to '📋 Tasks ', tasks_path %> </p>
+      <%= link_to tasks_path do%>
+        <p>
+          <i class="fa-solid fa-list-check text-light" style="margin-right:8px;"></i> Tasks
+        </p>
+      <% end %>
+
       <hr class="spacer">
-      <p> <%= link_to '📂 Documents ', documents_path %> </p>
+      <p>
+        <%= link_to documents_path do %>
+          <i class="fa-regular fa-folder-open text-light" style="margin-right:8px;"></i> Documents
+        <% end %>
+      </p>
     </div>
 
     <p> <%= link_to 'Home', root_path, class: "position-absolute mb-3", style: "bottom: 16px; left: 16px"  %> </p>

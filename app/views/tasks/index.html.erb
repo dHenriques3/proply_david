@@ -3,9 +3,12 @@
 
   <% @tasks.each_with_index do |task, index| %>
     <div class="doc-block mt-4 border border-primary">
+      <%= link_to property_path(task.property), style: "width:100%;" do %>
       <h4>
-        <%= link_to "📋#{task.property.name}", property_path(task.property), style: "width:100%;" %>
+        <i class="fa-solid fa-list-check basic" style="margin-right:4px;"></i>
+        <%= task.property.name %>
       </h4>
+      <% end %>
       <%= render 'taskaccordian', task: task, index: index %>
     </div>
   <% end %>
