@@ -1,11 +1,37 @@
 .offcanvas.offcanvas-end {
   width: 18% !important;
-
-
+  font-size: 20px;
+  background-color: $bronze;
 
 }
 
-.offcanvas-body a {
-  color: black;
+.offcanvas-body {
+  a {
+    color: black;
+    color:white;
+  }
+  p {
+    margin: 0;
+    // &:hover {
+    //   border-bottom: 2px solid white;
+    //   margin:5px;
+    // }
+
+  }
+
+}
+
+.spacer {
+  border-color: #eb9d6b;
+  opacity: 1;
+}
+
+
+.sidebar-list {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 261px;
 
 }
