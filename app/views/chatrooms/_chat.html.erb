@@ -8,25 +8,26 @@
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
         <div id="message-<%= message.id %>" class="d-flex mb-3 <%= message.user == current_user ? 'justify-content-end' : 'justify-content-start' %>">
-          <div class="w-50">
+          <div style="max-width:70ch; min-width: 250px;">
             <%= render "messages/message", message: message %>
           </div>
         </div>
-
-
-
       <% end %>
     </div>
   </div>
 
     <%= simple_form_for [@chatroom, @message],
-      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f|
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "position-relative", style: "margin: 10px"} do |f|
     %>
       <%= f.input :content,
         label: false,
         placeholder: "Message ##{@chatroom.property.name}",
-        wrapper_html: {class: "flex-grow-1 fixed"}
+        wrapper_html: {class: "flex-grow-1 fixed"},
+        input_html: {class: "bg-white", style: "border-radius: 16px;"}
       %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3 flex-box-right" %>
+      <%= f.submit "Send",
+          class: "btn btn-primary position-absolute text-light",
+          style: "bottom: 12px; right: 16px; border-radius: 16px;"
+       %>
     <% end %>
 </div>

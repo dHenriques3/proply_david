@@ -1,5 +1,35 @@
-<small>
-  <strong><%= message.user.first_name %></strong>
-  <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-</small>
-<p><%= message.content %></p>
+<div class="message-box d-flex flex-column <%= message.user == current_user ? 'bg-gray' : 'bg-white' %>">
+
+  <div class="message-user d-flex justify-content-start">
+
+    <div class="message-av me-1">
+      <% if message.user.profile_picture.attached? %>
+        <%= image_tag 'logo.png', class: "message-avatar"%>
+      <% else %>
+        <%= image_tag 'person.png', class: "message-avatar"%>
+      <% end %>
+    </div>
+      <div class="d-flex align-items-end">
+        <small>
+          <strong>
+            <em><%= message.user.first_name %></em>
+          </strong>
+        </small>
+      </div>
+
+  </div>
+
+  <div class="message-content d-flex justify-content-start">
+    <p><%= message.content %></p>
+  </div>
+
+  <div class="message-dt-av d-flex justify-content-end">
+
+    <div class="message-dt">
+      <small>
+        <em><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></em>
+      </small>
+    </div>
+  </div>
+
+</div>

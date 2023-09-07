@@ -34,7 +34,7 @@ export default class extends Controller {
     console.log(message)
     return `
       <div id="" class="d-flex mb-3 ${this.#justifyClass(currentUserIsSender)}">
-        <div class="w-50">
+        <div class=" min-width:250px; max-width:70ch;">
           ${message}
         </div>
       </div>
